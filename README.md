@@ -6,4 +6,5 @@ This software is licensed under a custom license that allows personal use but pr
 
 # Contact
 For any questions or licensing inquiries, please contact: Dr Guo E-mail: guotiannan@westlake.edu.cn 
+
 www.guomics.com
