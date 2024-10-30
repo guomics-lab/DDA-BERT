@@ -27,12 +27,7 @@ chmod -R a+x sage/linux*;
 ./dda-bert-start --mzml_paths=/data/ example.mzML --fasta=/data/example.fasta --output_path=/out/
 
 ## Results
-Results are output in CSV format as a comprehensive summary table that is easy to manipulate and interpret, facilitating further biological insights and downstream applications.  
-•	{filename}_precursor.csv
-![img_1.png](img_1.png)
-
-•	{filename}_protein.csv
-![img_2.png](img_2.png)
+Results are output in CSV format as a comprehensive summary table that is easy to manipulate and interpret, facilitating further biological insights and downstream applications.
 
 # License
 This software is licensed under a custom license that allows personal use but prohibits commercial use. For more details, see the LICENSE file.
