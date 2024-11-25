@@ -672,16 +672,9 @@ ggsave(filename = "E:\\github\\DDA-BERT\\pro_barplot\\Figure3_1cell_pro_barplot.
 ##Figure3L: protein group venn (single cell)
 read_and_merge_with_info <- function(directory, pattern) {
   files <- list.files(directory, pattern = pattern, full.names = TRUE)
-  
-  cat("目录", directory, "中符合条件的文件数量：", length(files), "\n")
-  
   data_list <- lapply(files, read.csv)
   combined_data <- bind_rows(data_list)
-  
   unique_data <- distinct(combined_data)
-  
-  cat("合并后去重的行数：", nrow(unique_data), "\n")
-  
   return(unique_data)
 }
 
