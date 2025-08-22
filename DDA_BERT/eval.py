@@ -144,19 +144,16 @@ class Evalute(ptl.LightningModule):
         df['label'] = df['label'].astype(float)
         df['score'] = df['score'].astype(float)
         df['weight'] = df['weight'].astype(float)
-        
-        
+
         loss_fn = nn.BCELoss()
         target = df[df['type'] == 'target']
         target_loss = loss_fn(torch.tensor(target['score'].to_numpy()),\
                               torch.tensor(target['label'].to_numpy())).item()
 
-        
-        decoy = df[df['type'] == 'decoy'] # weight = 1
+        decoy = df[df['type'] == 'decoy']
         decoy_loss = loss_fn(torch.tensor(decoy['score'].to_numpy()),\
                              torch.tensor(decoy['label'].to_numpy())).item()
-        
-        
+
         self.sw.add_scalar("eval_epoch/auc", auc, int(self.epoch))
         self.sw.add_scalar("eval_epoch/acc", acc, int(self.epoch))
         self.sw.add_scalar("eval_epoch/dda_loss", loss, int(self.epoch))
@@ -241,11 +238,21 @@ def main() -> None:
     sw = SummaryWriter(config["tb_summarywriter"])
 
     logging.info(f"valid_path:  {config['valid_path']}")
-    if os.path.isdir(config['valid_path']):
+    if ';' in config['valid_path']:
+        valid_path_list = config['valid_path'].split(';')
+        
+        ipc_file_path = []
+        for valid_path in valid_path_list:
+            ipc_file_path.extend(glob.glob(f'{valid_path}/*ipc'))
+        df = combine_data(ipc_file_path)
+        dl = gen_dl(df, config)
+        
+    elif os.path.isdir(config['valid_path']):
         ipc_file_path = [os.path.join(config['valid_path'], f) for f in os.listdir(config['valid_path']) if f.endswith('.ipc')][:1]
         print('load file: ', ipc_file_path)
         df = combine_data(ipc_file_path)
         dl = gen_dl(df, config)
+        
     else:
         df = pl.read_ipc(config['valid_path'])
         dl = gen_dl(df, config)
@@ -284,8 +291,6 @@ def main() -> None:
         # load model
         model = DDABert.load_pt(model_path, config)
         model.eval()
-        
-        print(model_path, 'load success!!!')
         model.to(torch.bfloat16).to(device)
 
         # parse epoch

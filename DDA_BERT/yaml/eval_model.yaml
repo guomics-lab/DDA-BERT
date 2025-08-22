@@ -1,5 +1,5 @@
 # Spectrum processing options.
-n_peaks: 300 # 150
+n_peaks: 300
 min_mz: 50.0
 max_mz: 2500.0
 min_intensity: 0.01
@@ -20,7 +20,6 @@ custom_encoder:
 max_length: 50
 residues:
   "A": 71.037114
-  # "C": 103.009185
   "D": 115.026943
   "E": 129.042593
   "F": 147.068414

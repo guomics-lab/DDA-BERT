@@ -471,8 +471,6 @@ def main():
     # 1) Distributed model
     # 2) Distributed optimizer
     # 3) DeepSpeed scheduler
-    print('args: ', args)
-    logging.info(f"rank : {int(os.environ['RANK'])}, local_rank: {int(os.environ['LOCAL_RANK'])}")
     model_engine, optim, _, scheduler = deepspeed.initialize(args=args,
                                                              model=model,
                                                              model_parameters=parameters,

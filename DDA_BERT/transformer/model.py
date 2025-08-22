@@ -176,27 +176,6 @@ class DDABert(nn.Module):
         """
         spectra, spectra_mask = self._encoder(spectra, spectra_mask)
         return self._psm_encoder(spectra, spectra_mask, precursors, tokens)
-    
-    def finetune_forward(
-            self,
-            spectra: Tensor,
-            spectra_mask: Tensor,
-            precursors: Tensor,
-            tokens: Tensor,
-    ) -> Tensor:
-        """Model forward pass.
-
-        Args:
-            spectra: float Tensor (batch, n_peaks, 2) . 2: [mz_array, int_array]
-            spectra_mask: Spectra padding mask, True for padded indices, bool Tensor (batch, n_peaks)
-            precursors: float Tensor (batch, 4) . 4: [precursor_masses, precursor_charges, deltaRT, predictedRT]
-            tokens: float Tensor (batch, 50)
-        Returns:
-            # PSM
-            pred: float Tensor (batch, 1)
-        """
-        spectra, spectra_mask = self._encoder(spectra, spectra_mask)
-        return self.finetune_psm_encoder(spectra, spectra_mask, precursors, tokens)
 
     def pred(
             self,
@@ -248,8 +227,8 @@ class DDABert(nn.Module):
         # pred： (batch , 51, 768)
         decoder_output = self.spectrum_sequence_encoder(spectra, spectra_mask, precursors, tokens)
 
-        # pred： (batch, 51, 768) ==>  (batch, 768, 51) ==> (batch, 768, 1) ==> (batch, 768)
-        pred = self.dropout(self.relu(self.psm_0(decoder_output.transpose(1, 2)).squeeze()))
+        # pred： (batch, 51, 768) ==> (batch, 768)
+        pred = decoder_output[:, 0, :]
         
         # mask pred：(batch, 51, 768) ==> (batch, 51, 29) ==> (batch, 29, 51) ==> (batch, 29, 50)
         mask_pred = self.mask_lm(decoder_output).transpose(1, 2)[:, :, 1:]
@@ -261,29 +240,7 @@ class DDABert(nn.Module):
         dda_pred = self.psm_2(dda_pred).squeeze()
 
         return dda_pred, mask_pred
-    
-    def finetune_psm_encoder(
-            self,
-            spectra: Tensor,
-            spectra_mask: Tensor,
-            precursors: Tensor,
-            tokens: Tensor,
-    ) -> Tensor:
-        # pred： (batch , 51, 768)
-        decoder_output = self.spectrum_sequence_encoder(spectra, spectra_mask, precursors, tokens)
 
-        # pred： (batch, 51, 768) ==>  (batch, 768, 51) ==> (batch, 768, 1) ==> (batch, 768)
-        pred = self.dropout(self.relu(self.psm_0(decoder_output.transpose(1, 2)).squeeze()))
-
-        # pred：(batch, 768) ==> (batch, 64)
-        mid_dda_pred = self.dropout(self.relu(self.psm_1(pred)))
-
-        # preds：(batch, 64) ==> (batch, 1)
-        dda_pred = self.psm_2(mid_dda_pred).squeeze()
-
-        return mid_dda_pred, dda_pred
-
-    
 
 if __name__ == '__main__':
     spectra = torch.randn(128, 300, 3)

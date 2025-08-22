@@ -43,30 +43,23 @@ class SpectrumDataset(Dataset):
         self.remove_precursor_tol = remove_precursor_tol
         self.min_intensity = min_intensity
         self.annotated = annotated
-        
-        if isinstance(df, pd.DataFrame):
-            self.data_type = "pd"
-        elif isinstance(df, pl.DataFrame):
-            self.data_type = "pl"
-        else:
-            raise Exception(f"Unsupported data type {type(df)}")
+
+        assert isinstance(df, pl.DataFrame):
 
     def __len__(self) -> int:
         return int(self.df.shape[0])
 
     def __getitem__(self, idx: int) -> tuple[Tensor, float, int, Tensor | list[str]]:
         peptide = ""
-
-        if self.data_type == "pl":
-            mz_array = torch.Tensor(self.df[idx, "mz_array"].to_list())
-            int_array = torch.Tensor(self.df[idx, "intensity_array"].to_list())
-            precursor_mz = self.df[idx, "precursor_mz"]
-            precursor_charge = self.df[idx, "precursor_charge"]
-            peptide = self.df[idx, "modified_sequence"]
-            label = self.df[idx, "label"]
-            weight = self.df[idx, "weight"]
-            deltaRT = self.df[idx, "delta_rt_model"] or 0.0
-            predictedRT = self.df[idx, "predicted_rt"] or 0.0
+        mz_array = torch.Tensor(self.df[idx, "mz_array"].to_list())
+        int_array = torch.Tensor(self.df[idx, "intensity_array"].to_list())
+        precursor_mz = self.df[idx, "precursor_mz"]
+        precursor_charge = self.df[idx, "precursor_charge"]
+        peptide = self.df[idx, "modified_sequence"]
+        label = self.df[idx, "label"]
+        weight = self.df[idx, "weight"]
+        deltaRT = self.df[idx, "delta_rt_model"] or 0.0
+        predictedRT = self.df[idx, "predicted_rt"] or 0.0
 
         spectrum = self._process_peaks(mz_array, int_array, precursor_mz, precursor_charge)
         tokens = self._tokenize(peptide)
@@ -159,7 +152,6 @@ def collate_batch_weight_deltaRT(
 ) -> tuple[Tensor, Tensor, Tensor, Tensor, Tensor, Tensor]:
     """Collate batch of samples."""
     spectrum, precursor_mzs, precursor_charges, deltaRT, predictedRT, tokens, peptide, label, weight = zip(*batch)
-    print('input spectrum: ', spectrum[0].shape)
     
     # Pad spectra
     spectra, spectra_mask = padding(spectrum)

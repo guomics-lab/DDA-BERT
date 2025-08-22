@@ -82,7 +82,6 @@ def collate_numpy_batch_weight(batch_data):
     return one_batch_spectra, one_batch_spectra_mask, one_batch_precursors, one_batch_tokens, one_batch_label, one_batch_weight
 
 
-# https://blog.csdn.net/zhang19990111/article/details/131636456
 def create_iterable_dataset(logging,
                             config,
                             s2i,
@@ -284,8 +283,7 @@ def aa_tokenize(sequence, s2i, max_length):
     return tokens
 
 
-
-def mask_unk_decoy_tokens(tokens, label, mask_index, unk_index, token_mask_ratio=0.15, device='cpu'):
+def mask_target_decoy_1unk_tokens(tokens, label, mask_index, unk_index, token_mask_ratio=0.15, device='cpu'):
     """Args:
             tokens: float Tensor (batch, 50)
             label: float Tensor (batch)
@@ -299,6 +297,8 @@ def mask_unk_decoy_tokens(tokens, label, mask_index, unk_index, token_mask_ratio
     """
     mask = torch.rand(tokens.shape[0], tokens.shape[1]).to(device)
     mask = torch.where(mask < token_mask_ratio, 1, 0)
+    # Set mask of first column (index 0) to 0, i.e., no masking.
+    mask[:, 0] = 0
     
     tokens = tokens.to(device)
     tokens_mask = torch.where((mask==1) & (tokens > mask_index), mask_index, tokens).to(device)
@@ -306,8 +306,13 @@ def mask_unk_decoy_tokens(tokens, label, mask_index, unk_index, token_mask_ratio
     label_adjust = torch.where(label==0, -1, label).to(device)
     label_mask = torch.mul(mask, label_adjust.reshape(label_adjust.shape[0], -1)).to(torch.int8).to(device)
 
+    # Keep one per row in decoy, set others to unk
+    decoy_tokens = mask_decoy_1unk(tokens, unk_index, device)
+    
+    # target: predict masked amino acids
+    # decoy: predict fixed placeholders
     tokens_label = torch.where((label_mask==1) & (tokens > mask_index), tokens, \
-                   torch.where((label_mask==-1) & (tokens > mask_index), unk_index, 0)).to(device)
+                   torch.where((label_mask==-1) & (tokens > mask_index), decoy_tokens, 0)).to(device)
     return tokens_mask, tokens_label
 
 

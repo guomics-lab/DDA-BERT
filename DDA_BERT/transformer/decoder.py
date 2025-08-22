@@ -235,7 +235,8 @@ class PeptideDecoder(torch.nn.Module):
         )
 
         embedding_arch = ['shared_linear', 'batchnorm', 'relu']
-        self.num_embeddings = NumEmbeddings(n_features=768, d_embedding=768,
+        self.num_embeddings = NumEmbeddings(n_features=768, 
+                                            d_embedding=768,
                                             embedding_arch=embedding_arch,
                                             d_feature=2)
 
