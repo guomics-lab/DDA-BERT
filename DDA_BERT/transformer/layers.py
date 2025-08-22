@@ -35,6 +35,7 @@ class PositionalEncoding(nn.Module):
 
 class MultiScalePeakEmbedding(nn.Module):
     """Multi-scale sinusoidal embedding based on Voronov et. al."""
+
     def __init__(self, h_size: int, dropout: float = 0) -> None:
         super().__init__()
         self.h_size = h_size
