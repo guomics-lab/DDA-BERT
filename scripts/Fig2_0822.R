@@ -6,16 +6,13 @@ library(tidyr)
 library(dplyr)
 library(gghalves)
 
-
 sage <- read.csv("Z:\\members\\ajun\\1billion_MSGPT\\DDA-BERT_0809\\main_figure\\Figure2_score\\Sage_human_merged_all_score.csv")
 sage$Method <- "Sage"
-
 
 dda <- read.csv("Z:\\members\\ajun\\1billion_MSGPT\\DDA-BERT_0809\\114_4_cls_epoch18\\main_figure\\DDA-BERT_initial_human_merged_all_score.csv")
 dda$Method <- "DDA-BERT"
 
 data <- bind_rows(sage, dda)
-
 
 data$LengthGroup <- factor(data$LengthGroup, levels = c("7-15", "16-24", "25-33", "34-42", "43-50"))
 data$Type <- factor(data$Type, levels = c("Target", "Decoy"))
@@ -55,12 +52,8 @@ library(ggplot2)
 library(dplyr)
 
 dda <- read.csv("Z:\\members\\ajun\\1billion_MSGPT\\DDA-BERT_0809\\114_4_cls_epoch18\\main_figure\\DDA-BERT_initial_human_merged_all_score_length.csv")
-
-
 dda$Type <- factor(dda$Type, levels = c("Target", "Decoy"))
 dda$Length <- as.integer(dda$Length)
-
-
 
 p <- ggplot(dda, aes(x = factor(Length), y = Score, fill = Type)) +
   geom_boxplot(outlier.size = 0.1, width = 0.6) +
