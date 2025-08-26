@@ -28,6 +28,7 @@ During execution, make sure that the .mzML and corresponding .raw file are place
 
 ## Step2: Run the Command
 Execute the following command in your terminal:
+
 cd /data/DDA-BERT-RUN/pre_release/v2.0; 
 python main_linux.py --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
 
