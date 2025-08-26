@@ -1,7 +1,9 @@
 # DDA-BERT
 # Description
 DDA-BERT is an open-source, end-to-end deep learning tool for rescoring peptide-spectrum matches (PSMs) in data-dependent acquisition (DDA) proteomics. Built on a Transformer-based architecture and trained on 3,701 DDA-MS files encompassing approximately 82 million high-confidence PSMs, it effectively models the complex relationships between peptide sequences and tandem mass spectra. DDA-BERT demonstrates robust and consistent performance across a diverse range of biological systems, including animal, plant, and microbial proteomes. It is particularly effective in low-input contexts such as trace-level and single-cell proteomics, offering a scalable and reliable solution for improving peptide identification in mass spectrometry-based workflows.
-Currently, the platform supports the .mzML format. Other common mass spectrometry data formats, such as Sciex .wiff and Thermo .raw, can be converted to .mzML using the MSConvertGUI tool provided by ProteoWizard for compatibility. Future releases will gradually expand direct support for these and other raw data formats.
+
+Currently, the tool supports only the .mzML format. During execution, the corresponding .raw file must be located in the same directory as the .mzML file to ensure proper functionality. The full source code is open and available for modification (see the License
+ for details), allowing users to adapt the tool to support additional data formats as needed. Future releases will gradually introduce direct compatibility with other commonly used mass spectrometry data formats, such as Sciex .wiff, Bruker .d, and other raw formats.
 
 # Installation
 On Linux, download the file from the release. DDA-BERT runs install-free and requires no additional configuration of the environment. 
