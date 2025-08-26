@@ -33,6 +33,7 @@ Execute the following command in your terminal:
 cd /data/DDA-BERT-RUN/pre_release/v2.0; 
 python main_linux.py --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
 
+
 ##The evaluation typically takes approximately 20 minutes, depending on the number of spectra, as well as the number of GPUs and CPU cores available. For reference, using a single NVIDIA A100 (40GB) GPU and 20 CPU cores, the complete workflow—including database search, PSM rescoring, and protein inference—was completed in about 23.5 minutes.
 
 ## Results
