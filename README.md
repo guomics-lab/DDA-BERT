@@ -20,7 +20,8 @@ DDA-BERT executables are available via https://guomics.com/software/DDA-BERT.
 ## Step1: Download Model and Test Files
 You may also use your own .raw and .mzML files.
 
-Model checkpoint: ./software/resource/model/mp_rank_00_model_states.pt
+Model checkpoint: ./software/resource/model/mp_rank_00_model_states.pt 
+Alternatively, it can be downloaded from Zenodo: https://zenodo.org/records/15923904
 
 Test data files: ./demo_data/HeLa_digest_SPME_1ng_1.mzML and ./demo_data/HeLa_digest_SPME_1ng_1.raw
 
@@ -37,6 +38,8 @@ python main_linux.py --mzml_paths=/data/example.mzML --fasta=/data/example.fasta
 ##The evaluation typically takes approximately 20 minutes, depending on the number of spectra, as well as the number of GPUs and CPU cores available. For reference, using a single NVIDIA A100 (40GB) GPU and 20 CPU cores, the complete workflow—including database search, PSM rescoring, and protein inference—was completed in about 23.5 minutes.
 
 ## Results
+Benchmarking results: https://zenodo.org/records/15923904
+
 Results are output in CSV format as a comprehensive summary table that is easy to manipulate and interpret, facilitating further biological insights and downstream applications.
 
 # License
