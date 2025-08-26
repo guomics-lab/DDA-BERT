@@ -20,6 +20,7 @@ DDA-BERT executables are available via https://guomics.com/software/DDA-BERT.
 ## Run Instructions
 ## Step1: Download Model and Test Files (You may also use your own .raw and .mzML files)
 Model checkpoint: mp_rank_00_model_states.pt
+
 Test data files: xxx.mzML and corresponding xxx.raw
 
 ##Note: .raw files can be converted to .mzML format using the MSConvertGUI tool from ProteoWizard. The default settings are sufficient, or you may refer to the configuration file DB_search_config/msConvert.config.txt for custom conversion options.
