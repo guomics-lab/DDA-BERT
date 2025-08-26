@@ -21,6 +21,7 @@ DDA-BERT executables are available via https://guomics.com/software/DDA-BERT.
 You may also use your own .raw and .mzML files.
 
 Model checkpoint: ./software/resource/model/mp_rank_00_model_states.pt 
+
 Alternatively, it can be downloaded from Zenodo: https://zenodo.org/records/15923904
 
 Test data files: ./demo_data/HeLa_digest_SPME_1ng_1.mzML and ./demo_data/HeLa_digest_SPME_1ng_1.raw
