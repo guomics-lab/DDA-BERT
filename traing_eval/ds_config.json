@@ -1,0 +1,30 @@
+{
+    "train_micro_batch_size_per_gpu": 256,
+    "gradient_accumulation_steps": 1,
+    "gradient_clipping": 10,
+    "bf16": {
+        "enabled": true
+    },
+    "fp16": {
+        "enabled": false,
+	"auto_cast": false,
+        "loss_scale": 0,
+        "initial_scale_power": 16,
+        "loss_scale_window": 1000,
+        "hysteresis": 2,
+        "consecutive_hysteresis": false,
+        "min_loss_scale": 1
+    },
+    "wall_clock_breakdown": false,
+    "zero_optimization": {
+        "stage": 0,
+        "allgather_partitions": true,
+        "reduce_scatter": true,
+        "allgather_bucket_size": 50000000,
+        "reduce_bucket_size": 50000000,
+        "overlap_comm": true,
+        "contiguous_gradients": true,
+        "cpu_offload": false
+    }
+}
+

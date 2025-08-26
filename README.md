@@ -1,0 +1,30 @@
+# DDA-BERT
+# Description
+DDA-BERT is an open-source, end-to-end deep learning tool for rescoring peptide-spectrum matches (PSMs) in data-dependent acquisition (DDA) proteomics. Built on a Transformer-based architecture and trained on 3,701 DDA-MS files encompassing approximately 82 million high-confidence PSMs, it effectively models the complex relationships between peptide sequences and tandem mass spectra. DDA-BERT demonstrates robust and consistent performance across a diverse range of biological systems, including animal, plant, and microbial proteomes. It is particularly effective in low-input contexts such as trace-level and single-cell proteomics, offering a scalable and reliable solution for improving peptide identification in mass spectrometry-based workflows.
+Currently, the platform supports the .mzML format. Other common mass spectrometry data formats, such as Sciex .wiff and Thermo .raw, can be converted to .mzML using the MSConvertGUI tool provided by ProteoWizard for compatibility. Future releases will gradually expand direct support for these and other raw data formats.
+
+# Installation
+On Linux, download the file from the release. DDA-BERT runs install-free and requires no additional configuration of the environment. 
+
+Hardware Requirements:  
+•	Operating System: Compatible with Linux-based operating systems.  
+•	Processor: A dual-core processor is recommended; the platform can also run on a single-core processor.  
+•	Memory: At least 40 GB of RAM is recommended. Higher memory configurations are advised for processing large-scale mass spectrometry or FASTA datasets.  
+•	Storage: A minimum of 100 GB of available disk space is recommended.  
+•	Graphics Processing Unit (GPU): An NVIDIA GPU that supports bfloat16 (bf16) precision inference is required. CUDA support is necessary, and a minimum of 20GB GPU memory is recommended.
+
+DDA-BERT executables are available via https://guomics.com/software/DDA-BERT.
+
+## Run the analysis from the command line
+cd /data/DDA-BERT-RUN/pre_release/v2.0; 
+python main_linux.py --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
+
+## Results
+Results are output in CSV format as a comprehensive summary table that is easy to manipulate and interpret, facilitating further biological insights and downstream applications.
+
+# License
+This software is licensed under a custom license that allows personal use but prohibits commercial use. For more details, see the LICENSE file.
+
+# Contact
+For any questions or licensing inquiries, please contact: Dr Guo E-mail: guotiannan@westlake.edu.cn
+www.guomics.com

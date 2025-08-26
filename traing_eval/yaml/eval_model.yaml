@@ -1,0 +1,68 @@
+# Spectrum processing options.
+n_peaks: 300
+min_mz: 50.0
+max_mz: 2500.0
+min_intensity: 0.01
+remove_precursor_tol: 2.0
+max_charge: 10
+precursor_mass_tol: 50 # ppm
+isotope_error_range: [0, 1]
+
+# Model architecture options.
+dim_model: 768
+n_head: 16
+dim_feedforward: 1024
+n_layers: 9
+dropout: 0
+dim_intensity:
+custom_encoder:
+
+max_length: 50
+residues:
+  "A": 71.037114
+  "D": 115.026943
+  "E": 129.042593
+  "F": 147.068414
+  "G": 57.021464
+  "H": 137.058912
+  "I": 113.084064
+  "K": 128.094963
+  "L": 113.084064
+  "M": 131.040485
+  "N": 114.042927
+  "O": 237.147727
+  "P": 97.052764
+  "Q": 128.058578
+  "R": 156.101111
+  "S": 87.032028
+  "T": 101.047679 
+  "U": 150.953633
+  "V": 99.068414
+  "W": 186.079313
+  "Y": 163.063329
+  "C[57.02]": 160.030649 
+  "M[15.99]": 147.035400 
+  "N[.98]": 115.026943
+  "Q[.98]": 129.042594
+  "X": 42.010565 # n[42] 
+
+n_log: 1
+# input params
+valid_path: '/DDA_BERT/val/'
+model_path: "/DDA_BERT/checkpoints/DDA_BERT.pt"
+model_type: "ascend"
+
+# out params
+tb_summarywriter: "/DDA_BERT/logs/eval_model/"
+out_path: "/DDA_BERT/pred/eval_model/"
+
+warmup_ratio: 0.2 # warmup ratio of max_iters
+seed: 123
+
+# Training/inference options
+train_batch_size: 256 # the batch size of train phase
+predict_batch_size: 1024 # the batch size of val phase
+step_ratio: 0.9 # tensorboard monitor ratio of train phase
+
+logger:
+epochs: 20

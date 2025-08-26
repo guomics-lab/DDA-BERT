@@ -1,0 +1,53 @@
+{
+    "database": {
+        "bucket_size": 8192,
+        "fragment_min_mz": 150.0,
+        "fragment_max_mz": 1500.0,
+        "enzyme": {
+            "missed_cleavages": 2,
+	"min_len": 7,
+        "max_len": 50,
+            "cleave_at":"$" 
+        },
+        "static_mods": {
+            "C": 57.0216
+        },
+    "variable_mods": {    
+     "M": [15.9949],     
+     "[": [42.0],
+     "N": [0.98],
+     "Q": [0.98]           
+    },
+    "max_variable_mods": 3, 
+        "decoy_tag": "rev_",
+        "generate_decoys": false,
+        "fasta": "/storage/guotiannanLab/ajun/SFM/DDA-BERT_benchmark/fasta/add_para_diann/human_entrapment_diann_pep.fasta"
+    },
+    "deisotope": true,
+    "chimera": false,
+	"min_peaks": 15,
+	"max_peaks": 300,
+    "min_matched_peaks": 5,
+    "max_fragment_charge": 2,
+    "report_psms": 10,
+    "precursor_tol": {
+        "ppm": [
+            -20,
+            20
+        ]
+    },
+    "fragment_tol": {
+        "ppm": [
+            -20,
+            20
+        ]
+    },
+    "precursor_charge": [2, 5],
+    "isotope_errors": [
+        0,
+        2
+    ],
+    "mzml_paths": [
+        "/storage/guotiannanLab/ajun/SFM/DDA-BERT_benchmark/raw_data/Human/HeLa_digest_SPME_0_1ng_1.mzML"
+    ]
+}
