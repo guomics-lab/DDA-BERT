@@ -2,11 +2,10 @@
 # Description
 DDA-BERT is an open-source, end-to-end deep learning tool for rescoring peptide-spectrum matches (PSMs) in data-dependent acquisition (DDA) proteomics. Built on a Transformer-based architecture and trained on 3,701 DDA-MS files encompassing approximately 82 million high-confidence PSMs, it effectively models the complex relationships between peptide sequences and tandem mass spectra. DDA-BERT demonstrates robust and consistent performance across a diverse range of biological systems, including animal, plant, and microbial proteomes. It is particularly effective in low-input contexts such as trace-level and single-cell proteomics, offering a scalable and reliable solution for improving peptide identification in mass spectrometry-based workflows.
 
-Currently, the tool supports only the .mzML format. During execution, the corresponding .raw file must be located in the same directory as the .mzML file to ensure proper functionality. The full source code is open and available for modification (see the License
- for details), allowing users to adapt the tool to support additional data formats as needed. Future releases will gradually introduce direct compatibility with other commonly used mass spectrometry data formats, such as Sciex .wiff, Bruker .d, and other raw formats.
+Currently, the tool supports only the .mzML format. However, the full source code is openly available and modifiable (see license for details), allowing users to adapt the tool to accommodate other data formats as needed. Future versions will gradually introduce direct compatibility with additional commonly used mass spectrometry formats, such as Sciex .wiff, Bruker .d, and other raw data types.
 
 # Installation
-On Linux, download the file from the release. DDA-BERT runs install-free and requires no additional configuration of the environment. 
+DDA-BERT runs install-free and requires no additional configuration of the environment. 
 
 Hardware Requirements:  
 •	Operating System: Compatible with Linux-based operating systems.  
@@ -18,10 +17,14 @@ Hardware Requirements:
 DDA-BERT executables are available via https://guomics.com/software/DDA-BERT.
 
 ## Run Instructions
-## Step1: Download Model and Test Files (You may also use your own .raw and .mzML files)
-Model checkpoint: mp_rank_00_model_states.pt
+## Step1: Download Model and Test Files
+You may also use your own .raw and .mzML files.
 
-Test data files: xxx.mzML and corresponding xxx.raw
+Model checkpoint: ./software/resource/model/mp_rank_00_model_states.pt 
+
+Alternatively, it can be downloaded from Zenodo: https://zenodo.org/records/15923904
+
+Test data files: ./demo_data/HeLa_digest_SPME_1ng_1.mzML and ./demo_data/HeLa_digest_SPME_1ng_1.raw
 
 ##Note: .raw files can be converted to .mzML format using the MSConvertGUI tool from ProteoWizard. The default settings are sufficient, or you may refer to the configuration file DB_search_config/msConvert.config.txt for custom conversion options.
 During execution, make sure that the .mzML and corresponding .raw file are placed in the same directory.
@@ -29,10 +32,15 @@ During execution, make sure that the .mzML and corresponding .raw file are place
 ## Step2: Run the Command
 Execute the following command in your terminal:
 
-cd /data/DDA-BERT-RUN/pre_release/v2.0; 
-python main_linux.py --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
+cd DDA-BERT; 
+./DDA-BERT --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
+
+
+##The evaluation typically takes approximately 20 minutes, depending on the number of spectra, as well as the number of GPUs and CPU cores available. For reference, using a single NVIDIA A100 (40GB) GPU and 20 CPU cores, the complete workflow—including database search, PSM rescoring, and protein inference—was completed in about 23.5 minutes.
 
 ## Results
+Benchmarking results: https://zenodo.org/records/15923904
+
 Results are output in CSV format as a comprehensive summary table that is easy to manipulate and interpret, facilitating further biological insights and downstream applications.
 
 # License
