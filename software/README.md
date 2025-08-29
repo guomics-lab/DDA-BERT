@@ -1,8 +1,7 @@
 
 <p align="center" style="margin-bottom: 0px !important;">
-  <img src="https://github.com/zhiyuajun/DDA-BERT/blob/main/DDA-BERT.png" width="120" height="120">
+  <img src="https://github.com/zhiyuajun/DDA-BERT/blob/main/DDA-BERT.png" width="240" height="240">
 </p>
-<h1 align="center" style="margin-top: -0px; font-size: 19px">DDA-BERT</h1>
 
 ## Description
 DDA-BERT: a computational platform designed for data-dependent acquisition (DDA) proteomics analysis.
@@ -19,7 +18,7 @@ Please make sure you have a valid installation of conda or miniconda. We recomme
 
 ```shell
 git clone https://github.com/guomics-lab/DDA-BERT.git
-cd DDA-BERT
+cd software/DDA-BERT
 ```
 
 ```shell
@@ -37,7 +36,7 @@ Specifically, first select the CUDA version according to your own operating syst
 
 Linux command-line run
 ```shell
-python main_linux.py
+python main_linux.py --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
 ```
 
 ## Hardware Requirements:
