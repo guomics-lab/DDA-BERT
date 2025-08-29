@@ -14,7 +14,7 @@ Hardware Requirements:
 •	Storage: A minimum of 100 GB of available disk space is recommended.  
 •	Graphics Processing Unit (GPU): An NVIDIA GPU that supports bfloat16 (bf16) precision inference is required. CUDA support is necessary, and a minimum of 20GB GPU memory is recommended.
 
-The DDA-BERT executable is available at https://guomics.com/software/DDA-BERT and on Zenodo (https://zenodo.org/records/15923904).
+The DDA-BERT executable is available at https://guomics.com/software/DDA-BERT or on Zenodo (https://zenodo.org/records/15923904).
 
 # Run Instructions
 ## Step1: Download Model and Test Files
