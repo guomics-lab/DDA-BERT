@@ -14,7 +14,7 @@ Hardware Requirements:
 •	Storage: A minimum of 100 GB of available disk space is recommended.  
 •	Graphics Processing Unit (GPU): An NVIDIA GPU that supports bfloat16 (bf16) precision inference is required. CUDA support is necessary, and a minimum of 20GB GPU memory is recommended.
 
-DDA-BERT executables are available via https://guomics.com/software/DDA-BERT.
+The DDA-BERT executable is available at https://guomics.com/software/DDA-BERT and on Zenodo (https://zenodo.org/records/15923904).
 
 ## Run Instructions
 ## Step1: Download Model and Test Files
@@ -31,10 +31,10 @@ During execution, make sure that the .mzML and corresponding .raw file are place
 
 ## Step2: Run the Command
 Execute the following command in your terminal:
-
+```shell
 cd DDA-BERT; 
 ./DDA-BERT --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
-
+```
 
 ##The evaluation typically takes approximately 20 minutes, depending on the number of spectra, as well as the number of GPUs and CPU cores available. For reference, using a single NVIDIA A100 (40GB) GPU and 20 CPU cores, the complete workflow—including database search, PSM rescoring, and protein inference—was completed in about 23.5 minutes.
 
