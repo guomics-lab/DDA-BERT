@@ -38,6 +38,9 @@ cd DDA-BERT;
 
 ##The evaluation typically takes approximately 20 minutes, depending on the number of spectra, as well as the number of GPUs and CPU cores available. For reference, using a single NVIDIA A100 (40GB) GPU and 20 CPU cores, the complete workflow—including database search, PSM rescoring, and protein inference—was completed in about 23.5 minutes.
 
+
+##The evaluation typically takes approximately 20 minutes, depending on the number of spectra, as well as the number of GPUs and CPU cores available. For reference, using a single NVIDIA A100 (40GB) GPU and 20 CPU cores, the complete workflow—including database search, PSM rescoring, and protein inference—was completed in about 23.5 minutes.
+
 ## Results
 Benchmarking results: https://zenodo.org/records/15923904
 
