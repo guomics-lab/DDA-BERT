@@ -4,8 +4,6 @@ DDA-BERT is an **open-source, end-to-end deep learning tool for rescoring peptid
 
 DDA-BERT demonstrates robust and consistent performance across a diverse range of biological systems, including animal, plant, and microbial proteomes. It is particularly effective in low-input contexts such as trace-level and single-cell proteomics, offering a scalable and reliable solution for improving peptide identification in mass spectrometry-based workflows.
 
-Currently, the tool supports only the .mzML format. However, the full source code is openly available and modifiable (see license for details), allowing users to adapt the tool to accommodate other data formats as needed. Future versions will gradually introduce direct compatibility with additional commonly used mass spectrometry formats, such as Sciex .wiff, Bruker .d, and other raw data types.
-
 # Installation
 DDA-BERT runs install-free and requires no additional configuration of the environment. 
 
@@ -18,7 +16,7 @@ Hardware Requirements:
 
 The DDA-BERT executable is available at https://guomics.com/software/DDA-BERT and on Zenodo (https://zenodo.org/records/15923904).
 
-## Run Instructions
+# Run Instructions
 ## Step1: Download Model and Test Files
 You may also use your own .raw and .mzML files.
 
@@ -45,6 +43,8 @@ To run from source, please refer to the instructions in software/README.md
 The evaluation process typically requires around 20 minutes, depending on the number of spectra and the available GPU/CPU resources.
 
 **For the provided test dataset, the complete workflow—including database search, PSM rescoring, and protein inference—takes approximately 23.5 minutes when run on a single NVIDIA A100 (40GB) GPU with 20 CPU cores.**
+
+Currently, the tool supports only the .mzML format. However, the full source code is openly available and modifiable (see license for details), allowing users to adapt the tool to accommodate other data formats as needed. Future versions will gradually introduce direct compatibility with additional commonly used mass spectrometry formats, such as Sciex .wiff, Bruker .d, and other raw data types.
 
 ## Results
 Benchmarking results: https://zenodo.org/records/15923904
