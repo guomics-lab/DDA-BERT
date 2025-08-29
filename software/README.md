@@ -1,6 +1,6 @@
 
 <p align="center" style="margin-bottom: 0px !important;">
-  <img src="https://github.com/user-attachments/assets/a8518446-a901-4062-a85d-53db184fe854" width="120" height="120">
+  <img src="https://github.com/zhiyuajun/DDA-BERT/blob/main/DDA-BERT.png" width="120" height="120">
 </p>
 <h1 align="center" style="margin-top: -0px; font-size: 19px">DDA-BERT</h1>
 
