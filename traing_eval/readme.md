@@ -1,6 +1,5 @@
-DDA-BERT
+#DDA-BERT
 
-   
 ## Environment Setup
 
 1. Create a new conda environment:
@@ -21,9 +20,9 @@ conda activate DDABert
 pip install -r ./requirements.txt
 ```
 
-## Model Overview
+## Training and Evaluation Pipeline
 
-### Model Checkpoint Dir
+### Model Dir
 
 /DDA_BERT/software/resource/model/mp_rank_00_model_states.pt
 
@@ -32,6 +31,6 @@ pip install -r ./requirements.txt
 deepspeed --bind_cores_to_rank   /DDA_BERT/traing_eval/train.py --deepspeed --deepspeed_config /DDA_BERT/traing_eval/ds_config.json --node_num 1 --gpu_num 8 --config /DDA_BERT/traing_eval/yaml/model.yaml
 
 
-### Step 2: Eval DDA-BERT
+### Step 2: Evaluate DDA-BERT to determine the best model
 
 cd /DDA_BERT/traing_eval; python eval.py --config /DDA_BERT/traing_eval/yaml/eval_model.yaml
