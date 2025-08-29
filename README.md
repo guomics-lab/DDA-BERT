@@ -30,7 +30,7 @@ The DDA-BERT executable is available at https://guomics.com/software/DDA-BERT or
 **During execution, make sure that the .mzML and corresponding .raw file are placed in the same directory.**
 
 ## Step2: Run the Command
-Execute the following command in your terminal:
+Unzip the installation archive and run the command below in a terminal:
 ```shell
 cd DDA-BERT; 
 ./DDA-BERT --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
