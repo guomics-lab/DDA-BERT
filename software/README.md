@@ -1,8 +1,7 @@
 
 <p align="center" style="margin-bottom: 0px !important;">
-  <img src="https://github.com/user-attachments/assets/a8518446-a901-4062-a85d-53db184fe854" width="120" height="120">
+  <img src="https://github.com/zhiyuajun/DDA-BERT/blob/main/DDA-BERT.png" width="240" height="240">
 </p>
-<h1 align="center" style="margin-top: -0px; font-size: 19px">DDA-BERT</h1>
 
 ## Description
 DDA-BERT: a computational platform designed for data-dependent acquisition (DDA) proteomics analysis.
@@ -12,14 +11,14 @@ The software and manual can be downloaded from the website https://guomics.com/s
 On Linux, download the file from the release. DDA-BERT runs install-free and requires no additional configuration of the environment. 
 
 ## Installation
-If you want to use DDA-BERT by source code, you can install python and install requirements package.
+To use DDA-BERT from source, install Python and the required dependencies.
 
 ### Prerequisites
-Please make sure you have a valid installation of conda or miniconda. We recommend setting up miniconda as described on their website.
+Ensure that Conda or Miniconda is installed. We recommend Miniconda; follow the installation instructions on the official website.
 
 ```shell
 git clone https://github.com/guomics-lab/DDA-BERT.git
-cd DDA-BERT
+cd software/DDA-BERT
 ```
 
 ```shell
@@ -37,19 +36,17 @@ Specifically, first select the CUDA version according to your own operating syst
 
 Linux command-line run
 ```shell
-python main_linux.py
+python main_linux.py --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
 ```
 
 ## Hardware Requirements:
-•	Operating System: Supports both Windows and Linux operating systems.
+•	Operating System: Compatible with Linux-based operating systems.
 
-•	Processor: A dual-core processor is recommended, but it can run on a single-core processor.
+•	Processor: A dual-core processor is recommended; the platform can also run on a single-core processor.
 
-•	Memory: 40GB or more is recommended. If the mass spectrometry files or library files to be identified are large, it is advised to use more memory.
+•	Memory: At least 40 GB of RAM is recommended. Higher memory configurations are advised for processing large-scale mass spectrometry or FASTA datasets.
 
-•	Storage: At least 100GB of available hard disk space is recommended.
-
-•	Graphics Card: A 40GB NVIDIA GPU with CUDA support or a V100 32GB GPU is recommended.
+•	Graphics Processing Unit (GPU): An NVIDIA GPU that supports bfloat16 (bf16) precision inference is required. CUDA support is necessary, and a minimum of 20GB GPU memory is recommended.
 
 ## License
 This software is licensed under a custom license that allows academic use but prohibits commercial use. For more details, see the LICENSE file.
