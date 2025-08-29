@@ -40,7 +40,7 @@ To run from source, please refer to the instructions in software/README.md
 
 ## Evaluation
 
-The evaluation process typically requires around 20 minutes, depending on the number of spectra and the available GPU/CPU resources.
+Evaluation typically completes in about 20 minutes, depending on the number of spectra and available GPU/CPU resources..
 
 **For the provided test data, the complete workflow—including database search, PSM rescoring, and protein inference—takes approximately 23.5 minutes when run on a single NVIDIA A100 (40GB) GPU with 20 CPU cores.**
 
