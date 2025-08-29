@@ -20,14 +20,11 @@ Hardware Requirements:
 The DDA-BERT executable is available at https://guomics.com/software/DDA-BERT or on Zenodo (https://zenodo.org/records/15923904).
 
 # Run Instructions
-## Step1: Download Model and Test Files
-You may also use your own .raw and .mzML files.
+## Step1: Download the executable and test files
 
-Model checkpoint: ./software/resource/model/mp_rank_00_model_states.pt 
+Executable: Download from the project site (https://guomics.com/software/DDA-BERT) or from Zenodo (https://zenodo.org/records/15923904).
 
-Alternatively, it can be downloaded from Zenodo: https://zenodo.org/records/15923904
-
-Test data files: demo_data/HeLa_digest_SPME_1ng_1.mzML and demo_data/HeLa_digest_SPME_1ng_1.raw
+Test data: demo_data/HeLa_digest_SPME_1ng_1.mzML and demo_data/HeLa_digest_SPME_1ng_1.raw. You can also use your own .raw and .mzML files.
 
 ##Note: .raw files can be converted to .mzML format using the MSConvertGUI tool from ProteoWizard. The default settings are sufficient, or you may refer to the configuration file DB_search_config/msConvert.config.txt for custom conversion options.
 **During execution, make sure that the .mzML and corresponding .raw file are placed in the same directory.**

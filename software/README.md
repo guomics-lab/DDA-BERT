@@ -2,8 +2,7 @@
 DDA-BERT: a computational platform designed for data-dependent acquisition (DDA) proteomics analysis.
 
 ## Software
-The software and manual can be downloaded from the website https://guomics.com/software/DDA-BERT.
-On Linux, download the file from the release. DDA-BERT runs install-free and requires no additional configuration of the environment. 
+The DDA-BERT executable and user manual are available at https://guomics.com/software/DDA-BERT. Run it directly without installation or additional configuration.
 
 ## Installation
 To use DDA-BERT from source, install Python and the required dependencies.
