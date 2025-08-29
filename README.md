@@ -1,4 +1,7 @@
-# DDA-BERT
+<p align="center" style="margin-bottom: 0px !important;">
+  <img src="https://github.com/zhiyuajun/DDA-BERT/blob/main/DDA-BERT.png" width="240" height="240">
+</p>
+
 # Description
 DDA-BERT is an **open-source, end-to-end deep learning tool for rescoring peptide-spectrum matches (PSMs) in data-dependent acquisition (DDA) proteomics.** Built on a Transformer-based architecture and trained on 3,701 DDA-MS files encompassing approximately 82 million high-confidence PSMs, it effectively models the complex relationships between peptide sequences and tandem mass spectra. 
 
