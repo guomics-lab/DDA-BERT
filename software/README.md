@@ -1,8 +1,3 @@
-
-<p align="center" style="margin-bottom: 0px !important;">
-  <img src="https://github.com/zhiyuajun/DDA-BERT/blob/main/DDA-BERT.png" width="240" height="240">
-</p>
-
 ## Description
 DDA-BERT: a computational platform designed for data-dependent acquisition (DDA) proteomics analysis.
 
