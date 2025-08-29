@@ -24,10 +24,10 @@ Model checkpoint: ./software/resource/model/mp_rank_00_model_states.pt
 
 Alternatively, it can be downloaded from Zenodo: https://zenodo.org/records/15923904
 
-Test data files: ./demo_data/HeLa_digest_SPME_1ng_1.mzML and ./demo_data/HeLa_digest_SPME_1ng_1.raw
+Test data files: demo_data/HeLa_digest_SPME_1ng_1.mzML and demo_data/HeLa_digest_SPME_1ng_1.raw
 
 ##Note: .raw files can be converted to .mzML format using the MSConvertGUI tool from ProteoWizard. The default settings are sufficient, or you may refer to the configuration file DB_search_config/msConvert.config.txt for custom conversion options.
-During execution, make sure that the .mzML and corresponding .raw file are placed in the same directory.
+**During execution, make sure that the .mzML and corresponding .raw file are placed in the same directory.**
 
 ## Step2: Run the Command
 Execute the following command in your terminal:
