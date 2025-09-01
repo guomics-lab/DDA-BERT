@@ -42,7 +42,7 @@ To run from source, please refer to the instructions in software/README.md
 
 Evaluation typically completes in about 20 minutes, depending on the number of spectra and available GPU/CPU resources.
 
-**For the provided test data, the complete workflow—including database search, PSM rescoring, and protein inference—takes approximately 17.5 minutes when run on a single NVIDIA A100 (40GB) GPU with 20 CPU cores.**
+**For the provided test data, the complete workflow, including database search, PSM rescoring, and protein inference, takes approximately 17.5 minutes on a single NVIDIA A100 (40GB) GPU with 20 CPU cores (AMD EPYC 7742 64-Core Processor).**
 
 Currently, the tool supports only the .mzML format. However, the full source code is openly available and modifiable (see license for details), allowing users to adapt the tool to accommodate other data formats as needed. Future versions will gradually introduce direct compatibility with additional commonly used mass spectrometry formats, such as Sciex .wiff, Bruker .d, and other raw data types.
 
