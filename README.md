@@ -8,7 +8,7 @@ DDA-BERT is an **open-source, end-to-end deep learning tool for rescoring peptid
 DDA-BERT demonstrates robust and consistent performance across a diverse range of biological systems, including animal, plant, and microbial proteomes. It is particularly effective in low-input contexts such as trace-level and single-cell proteomics, offering a scalable and reliable solution for improving peptide identification in mass spectrometry-based workflows.
 
 # Installation
-DDA-BERT runs install-free and requires no additional configuration of the environment. 
+DDA-BERT runs without installation and does not require any additional environment configuration. The executable is available at https://guomics.com/software/DDA-BERT or on Zenodo (https://zenodo.org/records/15923904).
 
 Hardware Requirements:  
 •	Operating System: Compatible with Linux-based operating systems.  
@@ -17,7 +17,6 @@ Hardware Requirements:
 •	Storage: A minimum of 100 GB of available disk space is recommended.  
 •	Graphics Processing Unit (GPU): An NVIDIA GPU that supports bfloat16 (bf16) precision inference is required. CUDA support is necessary, and a minimum of 20GB GPU memory is recommended.
 
-The DDA-BERT executable is available at https://guomics.com/software/DDA-BERT or on Zenodo (https://zenodo.org/records/15923904).
 
 # Run Instructions
 ## Step1: Download the executable and test files
