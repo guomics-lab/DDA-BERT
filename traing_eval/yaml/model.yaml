@@ -49,7 +49,7 @@ residues:
 n_log: 1
 # input params
 train_path: '/DDA_BERT/train/'
-valid_path: '/DDA_BERT/val/'
+#valid_path: '/DDA_BERT/val/'
 init_model_path: ''
 
 # out params
