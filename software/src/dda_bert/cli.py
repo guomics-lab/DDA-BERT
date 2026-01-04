@@ -156,9 +156,9 @@ def score(
             Optional[str], typer.Option("--fasta", "-f", help="Path to FASTA database for context. (Required)")] = ...,
 
         mzml_ipc_file_dir: Annotated[Optional[str], typer.Option("--mzml-ipc-file-dir",
-                                                                 help="The sage result tsv file path. Must be get if search engine contains sage.")] = None,
+                                                                 help="The mzml info file path, file name must be like: xxx.ipc.")] = None,
         sage_file_dir: Annotated[Optional[str], typer.Option("--sage-file-dir",
-                                                             help="The sage result tsv file path. Must be get if search engine contains sage.")] = None,
+                                                             help="The sage result tsv file dir path, the file name must be: xxx.sage.tsv. Must be get if search engine contains sage.")] = None,
         fp_file_dir: Annotated[Optional[str], typer.Option("--fp-file-dir",
                                                            help="The fragpipe result pin file path. Must be get if search engine contains fp.")] = None,
         ap_file_dir: Annotated[Optional[str], typer.Option("--ap-file-dir",
