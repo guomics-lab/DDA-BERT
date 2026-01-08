@@ -32,7 +32,7 @@ Hardware Requirements:
 Unzip the installation archive and run the command below in a terminal:
 ```shell
 cd DDA-BERT; 
-./DDA-BERT --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
+./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
 ```
 
 To run from source, please refer to the instructions in software/README.md
