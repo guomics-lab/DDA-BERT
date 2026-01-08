@@ -1,52 +1,58 @@
-## Description
-DDA-BERT: a computational platform designed for data-dependent acquisition (DDA) proteomics analysis.
+<p align="center" style="margin-bottom: 0px !important;">
+  <img src="https://github.com/zhiyuajun/DDA-BERT/blob/main/DDA-BERT.png" width="240" height="240">
+</p>
 
-## Software
-The DDA-BERT executable and user manual are available at https://guomics.com/software/DDA-BERT. Run it directly without installation or additional configuration.
+# Description
+DDA-BERT is an **open-source, end-to-end deep learning tool for rescoring peptide-spectrum matches (PSMs) in data-dependent acquisition (DDA) proteomics.** Built on a Transformer-based architecture and trained on 3,701 DDA-MS files encompassing approximately 82 million high-confidence PSMs, it effectively models the complex relationships between peptide sequences and tandem mass spectra. 
 
-## Installation
-To use DDA-BERT from source, install Python and the required dependencies.
+DDA-BERT demonstrates robust and consistent performance across a diverse range of biological systems, including animal, plant, and microbial proteomes. It is particularly effective in low-input contexts such as trace-level and single-cell proteomics, offering a scalable and reliable solution for improving peptide identification in mass spectrometry-based workflows.
 
-### Prerequisites
-Ensure that Conda or Miniconda is installed. We recommend Miniconda; follow the installation instructions on the official website.
+# Installation
+DDA-BERT runs without installation and does not require any additional environment configuration. The executable is available at https://guomics.com/software/DDA-BERT or on Zenodo (https://zenodo.org/records/15923904).
 
-```shell
-git clone https://github.com/guomics-lab/DDA-BERT.git
-cd software/DDA-BERT
-```
-
-```shell
-conda create -n DDA-BERT python=3.10
-conda activate DDA-BERT
-```
-
-```shell
-pip install -r requirements.txt
-```
-
-**You need install torch from pytorch (https://pytorch.org/).** It is advisable to install the entire pytorch package and follow the official installation method provided by pytorch.
-
-Specifically, first select the CUDA version according to your own operating system, and then, based on the CUDA version, choose the corresponding installation command to execute. For example, run "pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124".
-
-Linux command-line run
-```shell
-python main_linux.py --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
-```
-
-## Hardware Requirements:
-•	Operating System: Compatible with Linux-based operating systems.
-
-•	Processor: A dual-core processor is recommended; the platform can also run on a single-core processor.
-
-•	Memory: At least 40 GB of RAM is recommended. Higher memory configurations are advised for processing large-scale mass spectrometry or FASTA datasets.
-
+Hardware Requirements:  
+•	Operating System: Compatible with Linux-based operating systems.  
+•	Processor: A dual-core processor is recommended; the platform can also run on a single-core processor.  
+•	Memory: At least 40 GB of RAM is recommended. Higher memory configurations are advised for processing large-scale mass spectrometry or FASTA datasets.  
+•	Storage: A minimum of 100 GB of available disk space is recommended.  
 •	Graphics Processing Unit (GPU): An NVIDIA GPU that supports bfloat16 (bf16) precision inference is required. CUDA support is necessary, and a minimum of 20GB GPU memory is recommended.
 
-## License
-This software is licensed under a custom license that allows academic use but prohibits commercial use. For more details, see the LICENSE file.
 
-## Contact
-For any questions or licensing inquiries, please contact:
-Dr Guo
-E-mail: guotiannan@westlake.edu.cn
+# Run Instructions
+## Step1: Download the executable and test files
+
+**Executable:** Download from the project site (https://guomics.com/software/DDA-BERT) or from Zenodo (https://zenodo.org/records/15923904).
+
+**Test data:** demo_data/HeLa_digest_SPME_1ng_1.mzML and demo_data/HeLa_digest_SPME_1ng_1.raw. You can also use your own .raw and .mzML files.
+
+##Note: .raw files can be converted to .mzML format using the MSConvertGUI tool from ProteoWizard. The default settings are sufficient, or you may refer to the configuration file DB_search_config/msConvert.config.txt for custom conversion options.
+**During execution, make sure that the .mzML and corresponding .raw file are placed in the same directory.**
+
+## Step2: Run the Command
+Unzip the installation archive and run the command below in a terminal:
+```shell
+cd DDA-BERT; 
+./DDA-BERT --mzml_paths=/data/example.mzML --fasta=/data/example.fasta --output_path=/out/
+```
+
+To run from source, please refer to the instructions in software/README.md
+
+## Evaluation
+
+Evaluation typically completes in about 20 minutes, depending on the number of spectra and available GPU/CPU resources.
+
+**For the provided test data, the complete workflow, including database search, PSM rescoring, and protein inference, takes approximately 17.5 minutes on a single NVIDIA A100 (40GB) GPU with 20 CPU cores (AMD EPYC 7742 64-Core Processor).**
+
+Currently, the tool supports only the .mzML format. However, the full source code is openly available and modifiable (see license for details), allowing users to adapt the tool to accommodate other data formats as needed. Future versions will gradually introduce direct compatibility with additional commonly used mass spectrometry formats, such as Sciex .wiff, Bruker .d, and other raw data types.
+
+## Results
+Benchmarking results: https://zenodo.org/records/15923904
+
+Results are output in CSV format as a comprehensive summary table that is easy to manipulate and interpret, facilitating further biological insights and downstream applications.
+
+# License
+This software is licensed under a custom license that allows personal use but prohibits commercial use. For more details, see the LICENSE file.
+
+# Contact
+For any questions or licensing inquiries, please contact: Dr Guo E-mail: guotiannan@westlake.edu.cn
 www.guomics.com
