@@ -21,11 +21,10 @@ import lightning.pytorch as ptl
 from lightning.pytorch.strategies import DDPStrategy
 from torch.utils.tensorboard import SummaryWriter
 
-from transformer.dataset import SpectrumDataset, collate_batch_weight_deltaRT, mkdir_p
+from transformer.dataset import SpectrumDataset, collate_batch_weight_deltaRT
+from transformer.utils import mkdir_p, set_seeds
 from transformer.model import DDABert
 from transformer.iterable_dataset import create_iterable_dataset
-
-from utils import set_seeds
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
