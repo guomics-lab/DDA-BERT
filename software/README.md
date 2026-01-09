@@ -58,7 +58,7 @@ Ensure that Conda or Miniconda is installed. We recommend Miniconda; follow the 
 
 ```shell
 git clone https://github.com/guomics-lab/DDA-BERT.git
-cd software/DDA-BERT
+cd software
 ```
 
 ```shell
