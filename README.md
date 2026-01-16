@@ -17,25 +17,21 @@ Hardware Requirements:
 •	Storage: A minimum of 100 GB of available disk space is recommended.  
 •	Graphics Processing Unit (GPU): An NVIDIA GPU that supports bfloat16 (bf16) precision inference is required. CUDA support is necessary, and a minimum of 20GB GPU memory is recommended.
 
+## Directories Overview
+This repository is organized into several key directories:
 
-# Run Instructions
-## Step1: Download the executable and test files
+### Software
+The `software` directory contains the source code for the identification software along with instructions on how to use it. Here, you will find all necessary scripts and binaries required for running the software.
 
-**Executable:** Download from the project site (https://guomics.com/software/DDA-BERT) or from Zenodo (https://zenodo.org/records/15923904).
+### Training and Evaluation
+Under the `training_eval` directory, you will discover the code used for training and evaluating models. This includes scripts for preparing datasets, configuring training parameters, and executing training jobs.
 
-**Test data:** demo_data/HeLa_digest_SPME_1ng_1.mzML and demo_data/HeLa_digest_SPME_1ng_1.raw. You can also use your own .raw and .mzML files.
+Scripts
+The `scripts` directory holds various scripts aimed at facilitating the process of plotting and visualizing data. These tools can be particularly useful for generating insights from experimental results.
 
-##Note: .raw files can be converted to .mzML format using the MSConvertGUI tool from ProteoWizard. The default settings are sufficient, or you may refer to the configuration file DB_search_config/msConvert.config.txt for custom conversion options.
-**During execution, make sure that the .mzML and corresponding .raw file are placed in the same directory.**
+### Demo Data
+For demonstration purposes, we have included a set of sample data in the `demo_data` directory. This data can be used to test the functionalities of the software and models without needing to prepare your own dataset.
 
-## Step2: Run the Command
-Unzip the installation archive and run the command below in a terminal:
-```shell
-cd DDA-BERT; 
-./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
-```
-
-To run from source, please refer to the instructions in software/README.md
 
 ## Evaluation
 
