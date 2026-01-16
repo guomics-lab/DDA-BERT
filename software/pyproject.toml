@@ -1,0 +1,106 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dda-bert"
+version = "3.1"
+description = "DDA-BERT: An end-to-end rescoring tool tailored for data-dependent acquisition (DDA) proteomics."
+readme = "README.md"
+requires-python = ">=3.10, <3.13"
+license = { file = "License.md" }
+keywords = [
+    "DDA",
+    "peptide identification",
+    "PSM rescoring",
+    "BERT"
+]
+authors = [
+    { name = "Jun A", email = "ajun@westlake.edu.cn" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Intended Audience :: Science/Research"
+]
+
+dependencies = [
+    "pyteomics>=4.7.5",
+    "pandas>=2.2.3",
+    "polars>=1.31.0",
+    "scikit-learn>=1.5.2",
+    "lightning>=2.5.2",
+    "lxml>=6.0.0",
+    "pyarrow>=20.0.0",
+    "numba>=0.61.2",
+    "numpy>=1.26.3,<2.0",
+    "einops>=0.8.1",
+    "tensorboard>=2.19.0",
+    "datasets>=4.0.0",
+    "lark>=1.2.2",
+    "fastobo>=0.13.0",
+    "platformdirs>=4.3.8",
+    "h5py>=3.13.0",
+    "alphapept>=0.5.3",
+    "peptdeep>=1.4.0",
+    "spectrum-utils>=0.4.2",
+    "ropwr>=1.1.0",
+    "ECOS>=2.0.14",
+    "GPUtil>=1.4.0",
+    "torch>=2.5.0",
+    "torchvision>=0.20.0",
+    "torchaudio>=2.5.0",
+    "typer>=0.12.0",
+    "pythonnet>=3.0.5"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov",
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "pre-commit",
+    "ipython",
+]
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.25",
+]
+all = ["dda-bert[dev,docs]"]
+
+[project.scripts]
+dda-bert = "dda_bert.cli:main"
+
+
+[tool.hatch.version]
+path = "src/dda_bert/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/dda_bert",
+]
+
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+select = ["E", "W", "F", "I", "B", "UP", "PL", "RUF", "TID", "ARG"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+#exclude = ["tests"]
+
+[tool.pytest.ini_options]
+addopts = "-ra -q --cov=dda_bert --cov-report=term-missing"
+testpaths = ["tests"]

@@ -1,0 +1,64 @@
+{
+  "database": {
+    "bucket_size": 8192,
+    "enzyme": {
+      "missed_cleavages": 2,
+      "min_len": 7,
+      "max_len": 50,
+      "cleave_at": "KR",
+      "restrict": "P"
+    },
+    "fragment_min_mz": 150.0,
+    "fragment_max_mz": 1500.0,
+    "static_mods": {
+      "C": 57.0216
+    },
+    "variable_mods": {
+      "[": [
+        42.0
+      ],
+      "N": [
+        0.98
+      ],
+      "Q": [
+        0.98
+      ],
+      "M": [
+        15.9949
+      ]
+    },
+    "max_variable_mods": 3,
+    "decoy_tag": "rev_",
+    "generate_decoys": true,
+    "fasta": ""
+  },
+  "precursor_tol": {
+    "ppm": [
+      -20.0,
+      20.0
+    ]
+  },
+  "fragment_tol": {
+    "ppm": [
+      -20.0,
+      20.0
+    ]
+  },
+  "precursor_charge": [
+    2,
+    5
+  ],
+  "isotope_errors": [
+    0,
+    2
+  ],
+  "deisotope": true,
+  "chimera": false,
+  "min_peaks": 15,
+  "max_peaks": 300,
+  "max_fragment_charge": 2,
+  "min_matched_peaks": 5,
+  "report_psms": 10,
+  "mzml_paths": [
+  ]
+}

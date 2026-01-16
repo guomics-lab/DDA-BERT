@@ -13,12 +13,11 @@ from torch import Tensor
 from torch.utils.data import Dataset
 import torch.nn.functional as F
 
-# from constants import PROTON_MASS_AMU
 PROTON_MASS_AMU = 1.007276
 
 
 class SpectrumDataset(Dataset):
-    """Spectrum dataset class supporting `.ipc` and `.csv`."""
+    """Spectrum dataset class supporting `.ipc`."""
 
     def __init__(
         self,
@@ -50,7 +49,6 @@ class SpectrumDataset(Dataset):
         return int(self.df.shape[0])
 
     def __getitem__(self, idx: int) -> tuple[Tensor, float, int, Tensor | list[str]]:
-        peptide = ""
         mz_array = torch.Tensor(self.df[idx, "mz_array"].to_list())
         int_array = torch.Tensor(self.df[idx, "intensity_array"].to_list())
         precursor_mz = self.df[idx, "precursor_mz"]
