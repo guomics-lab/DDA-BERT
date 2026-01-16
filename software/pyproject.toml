@@ -12,11 +12,11 @@ license = { file = "License.md" }
 keywords = [
     "DDA",
     "peptide identification",
-    "rescoring",
-    "BERT",
+    "PSM rescoring",
+    "BERT"
 ]
 authors = [
-    { name = "JunA", email = "ajun@westlake.edu.cn" }
+    { name = "Jun A", email = "ajun@westlake.edu.cn" }
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
