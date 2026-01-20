@@ -80,12 +80,12 @@ DDA-BERT is available as a self-contained Docker image that includes all require
 
 Ensure that the Docker service is active before proceeding.
 
-Step 1: Pull the Docker Image
+**Step 1: Pull the Docker Image**
 Pull the pre-built DDA-BERT image from Docker Hub:
    ```bash
    docker pull guomics2017/dda-bert:v3.1
    ```
-Step 2: Run the Container
+**Step 2: Run the Container**
 
 Below is an example command using a typical Linux absolute path, where a local directory is mounted into the container for data access:
 
