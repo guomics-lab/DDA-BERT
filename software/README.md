@@ -9,8 +9,7 @@ There are different types of installation or use possible:
 - [**Portable Executable:**](#portable-executable) Choose this ready-to-run, no-install version!
 - [**Developer installation:**](#developer-installation) Choose this installation if you
   are familiar with CLI tools, [conda](https://docs.conda.io/en/latest/)
-  and Python. This installation allows access to all available features
-  of DDA-BERT and even allows to modify its source code directly. You can use DDA-BERT as a Python package with this choose.
+  and Python. You can use DDA-BERT as a Python package with this choose.
 - [**Docker installation**](#docker-installation) Choose this installation if you want to use DDA-BERT with docker.
 
 ### Portable Executable
