@@ -22,10 +22,10 @@ This repository is organized into the following main directories, each serving a
 
 1. software/
 
-    This directory contains the core implementation of the DDA-BERT identification and rescoring pipeline, including all required **source code, executable scripts, and configuration files** necessary to run the software.
+   This directory contains the core implementation of the DDA-BERT identification and rescoring pipeline, including all required **source code, executable scripts, and configuration files** necessary to run the software.
 2. training_eval/
 
-    The `training_eval` directory contains the code used for **model training and evaluation**. It includes scripts for configuring training parameters, executing training jobs, and performing systematic evaluation of trained models.
+   The `training_eval` directory contains the code used for **model training and evaluation**. It includes scripts for configuring training parameters, executing training jobs, and performing systematic evaluation of trained models.
 3. scripts/
 
    This directory contains auxiliary scripts for **data processing, result summarization, and visualization**. These utilities support downstream analysis, such as plotting performance metrics and generating figures for method evaluation and result interpretation.
