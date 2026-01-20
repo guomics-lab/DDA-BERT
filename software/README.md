@@ -27,8 +27,7 @@ It is strongly recommended to install DDA-BERT in an isolated Conda environment.
 
 #### Prerequisites
 
-#### Step 1. Download jdk11 from [here](https://guomics-share.oss-cn-shanghai.aliyuncs.com/SOFTWARE/DDA-BERT/jdk-11.0.26.zip),
-unzip and move to project root directory.
+#### Step 1. Download jdk11 from [here](https://guomics-share.oss-cn-shanghai.aliyuncs.com/SOFTWARE/DDA-BERT/jdk-11.0.26.zip), unzip and move to project root directory.
 > **⚠️Note**: This project was built using **FragPipe v22**, which includes the following core components: **MSFragger v4.1**, **Philosopher v5.1.1**, **diaTracer v1.1.5**, **IonQuant v1.10.27**. If you're using a different version of FragPipe, make sure to download compatible versions of these tools and properly configure your environment to ensure smooth execution of the analysis pipeline.
 
 You can download FragPipe from [here](https://guomics-share.oss-cn-shanghai.aliyuncs.com/SOFTWARE/DDA-BERT/FragPipe22_0.zip) with the following core components.
