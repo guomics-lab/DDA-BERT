@@ -1,7 +1,5 @@
 # Quick Start Guide
 
-## Installation
-
 Multiple installation options are provided to accommodate different usage scenarios.
 
 Users may choose one of the following installation or usage modes:
