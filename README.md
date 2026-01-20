@@ -16,7 +16,8 @@ Hardware Requirements:
 •	Memory: At least 40 GB of RAM is recommended. Higher memory configurations are advised for processing large-scale mass spectrometry or FASTA datasets.
 •	Graphics Processing Unit (GPU): An NVIDIA GPU that supports bfloat16 (bf16) precision inference is required. CUDA support is necessary, and a minimum of 20GB GPU memory is recommended.
 
-Directories Overview
+## Directories Overview
+
 This repository is organized into the following main directories, each serving a distinct role in the DDA-BERT workflow:
 
 1. software/
@@ -27,10 +28,10 @@ This repository is organized into the following main directories, each serving a
     The *training_eval* directory contains the code used for model training and evaluation. It includes scripts for configuring training parameters, executing training jobs, and performing systematic evaluation of trained models.
 3. scripts/
 
-   This directory contains auxiliary ***scripts*** for data processing, result summarization, and visualization. These utilities support downstream analysis, such as plotting performance metrics and generating figures for method evaluation and result interpretation.
+   This directory contains auxiliary scripts for data processing, result summarization, and visualization. These utilities support downstream analysis, such as plotting performance metrics and generating figures for method evaluation and result interpretation.
 4. demo_data/
 
-   For demonstration and testing purposes, the ***demo_data*** directory includes example datasets that allow users to quickly validate the software functionality and reproduce the complete analysis workflow without preparing custom input data.
+   For demonstration and testing purposes, the *demo_data* directory includes example datasets that allow users to quickly validate the software functionality and reproduce the complete analysis workflow without preparing custom input data.
 
 ## Evaluation
 
