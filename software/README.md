@@ -6,7 +6,7 @@ Multiple installation options are provided to accommodate different usage scenar
 - [**Python Package Installation:**](#python-package-installation) This option installs DDA-BERT via pip and enables users to modify the source code as needed, for example, to support rescoring outputs from additional database search engines. In this mode, DDA-BERT can be used directly as a Python package within custom workflows.
 - [**Docker installation**](#docker-installation) Recommended for users who prefer containerized environments or require reproducible deployments.
 
-### Portable Executable
+### Option A. Portable Executable
 
 #### Step 1. Download
 
@@ -19,7 +19,7 @@ cd DDA-BERT;
 ./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
 ```
 
-### Python Package Installation
+### Option B. Python Package Installation
 It is strongly recommended to install DDA-BERT in an isolated Conda environment.  
 ⏱️ Estimated setup time: **~10–15 minutes**
 
@@ -54,18 +54,18 @@ uv pip install -e . --refresh
 
 DDA-BERT provides flexible analysis modes, supporting both an an end-to-end integrated workflow and a modular usage pattern, including:
 
-**Option 1. "one-stop" workflow**  
+**Option A. "one-stop" workflow**  
 A complete one-stop analysis pipeline encompassing database searching, data preprocessing and cleaning, PSM rescoring, FDR control, and protein inference.
 ```shell
 dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
 ```
 
-**Option 2. Modular rescoring and inference workflow**  
+**Option B. Modular rescoring and inference workflow**  
 Support for rescoring PSMs from existing database search results, followed by FDR control and protein inference, enabling seamless integration with different search engines or established proteomics workflows.
 ```shell
 dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --engines=sage,fp,ap  --output-path=/out/
 ```
-### Docker Installation
+### Option C. Docker Installation
 
 DDA-BERT is available as a self-contained Docker image that includes all required dependencies and runtime environments. This option enables users to run DDA-BERT without manual environment configuration and is well suited for reproducible and portable deployments.
 
