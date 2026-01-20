@@ -35,7 +35,7 @@ This repository is organized into the following main directories, each serving a
 
 ## Evaluation
 
-Evaluation typically completes in about 20 minutes, depending on the number of spectra and available GPU/CPU resources.
+Evaluation typically completes in ~20 minutes, depending on the number of spectra and available GPU/CPU resources.
 
 **For the provided test data, the complete workflow, including database search, PSM rescoring, and protein inference, takes approximately 17.5 minutes on a single NVIDIA A100 (40GB) GPU with 20 CPU cores (AMD EPYC 7742 64-Core Processor).**
 
