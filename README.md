@@ -42,7 +42,8 @@ Evaluation typically completes in ~20 minutes, depending on the number of spectr
 Currently, the tool supports only the .mzML format. However, the full source code is openly available and modifiable (see license for details), allowing users to adapt the tool to accommodate other data formats as needed. Future versions will gradually introduce direct compatibility with additional commonly used mass spectrometry formats, such as Sciex .wiff, Bruker .d, and other raw data types.
 
 ## Results
-Benchmarking results comparing DDA-BERT with other tools, along with the corresponding FASTA files, trained models, and database search configuration files, are available at: 🔗 https://drive.google.com/drive/folders/1pDxTuFYKoy-uJmq1QS7mWBuz6pkVh3jN
+Benchmarking results comparing DDA-BERT with other tools, along with the corresponding FASTA files, trained models, and database search configuration files, are available at:   
+🔗 https://drive.google.com/drive/folders/1pDxTuFYKoy-uJmq1QS7mWBuz6pkVh3jN
 
 Results are output in CSV format as a comprehensive summary table that is easy to manipulate and interpret, facilitating further biological insights and downstream applications.
 
