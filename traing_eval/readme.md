@@ -1,5 +1,3 @@
-# DDA-BERT Training and Evaluation
-
 ## Environment Setup
 
 1. Create a new conda environment:
@@ -20,7 +18,7 @@ conda activate DDABert
 pip install -r ./requirements.txt
 ```
 
-## Training and Evaluation Pipeline
+## Training and Evaluation
 
 Model path: /DDA_BERT/software/resource/model/mp_rank_00_model_states.pt
 
