@@ -24,7 +24,7 @@ cd DDA-BERT;
 ```
 
 ### Python Package Installation
-It is strongly recommended to install DDA-BERT in an isolated Conda environment.
+It is strongly recommended to install DDA-BERT in an isolated Conda environment.  
 ⏱️ Estimated setup time: **~10–15 minutes**
 
 **Test data:** demo_data/HeLa_digest_SPME_1ng_1.mzML and demo_data/HeLa_digest_SPME_1ng_1.raw. You can also use your own .raw and .mzML files.
