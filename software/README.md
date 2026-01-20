@@ -2,7 +2,7 @@
 
 ## Installation
 
-DDA-BERT is designed to run on Linux systems and can be deployed using multiple installation options to accommodate different usage scenarios.
+Multiple installation options are provided to accommodate different usage scenarios.
 
 Users may choose one of the following installation or usage modes:
 
@@ -57,7 +57,7 @@ uv pip install -e . --refresh
 
 #### Running DDA-BERT
 
-DDA-BERT provides flexible analysis modes, supporting both an "one-stop" workflow and a modular usage pattern, including:
+DDA-BERT provides flexible analysis modes, supporting both an an end-to-end integrated workflow and a modular usage pattern, including:
 
 **1. "one-stop" workflow**  
 A complete one-stop analysis pipeline encompassing database searching, data preprocessing and cleaning, PSM rescoring, FDR control, and protein inference.
