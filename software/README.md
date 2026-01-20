@@ -2,23 +2,26 @@
 
 ## Installation
 
-DDA-BERT can be installed and used on Linux systems.
+DDA-BERT is designed to run on Linux systems and can be deployed using multiple installation options to accommodate different usage scenarios.
 
-There are different types of installation or use possible:
+Installation Options
 
-- [**Portable Executable:**](#portable-executable) Choose this ready-to-run, no-install version!
-- [**Developer installation:**](#developer-installation) Choose this installation if you
-  are familiar with CLI tools, [conda](https://docs.conda.io/en/latest/)
-  and Python. You can use DDA-BERT as a Python package with this choose.
-- [**Docker installation**](#docker-installation) Choose this installation if you want to use DDA-BERT with docker.
+Users may choose one of the following installation or usage modes:
+
+- [**Portable Executable:**](#portable-executable) A ready-to-run, no-install option recommended for quick evaluation and standard usage.
+- [**Python Package Installation:**](#python-package-installation) This option installs DDA-BERT via pip and enables users to modify the source code as needed, for example, to support rescoring outputs from additional database search engines. In this mode, DDA-BERT can be used directly as a Python package within custom workflows.
+- [**Docker installation**](#docker-installation) Recommended for users who prefer containerized environments or require reproducible deployments.
 
 ### Portable Executable
 
-#### Step1: Download the executable and test files
+#### Step1: Download
+
+Download the latest DDA-BERT portable executable and accompanying test files from the official release page.
+
 You can download the latest release of DDA-BERT [https://guomics.com/software/DDA-BERT](https://guomics.com/software/DDA-BERT/downloads.html).
 
-#### Step2: Run the Command
-Unzip the installation archive and run the command below in a terminal:
+#### Step2: Run
+Unzip the downloaded archive and execute the following command in a terminal:
 ```shell
 cd DDA-BERT; 
 ./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
@@ -26,13 +29,7 @@ cd DDA-BERT;
 
 ### Developer installation
 
-#### Install with pip
-It is strongly recommended to install DDA-BERT in its own environment.
-1. Open the console and create a new conda environment: conda create --name dda-bert python=3.10
-2. Activate the environment: conda activate dda-bert
-3. Install DDA-BERT via pip: pip install dda-bert.
-
-#### Install with Developer from source
+#### Python Package Installation
 ⏱️ Estimated setup time: **~10–15 minutes**
 
 **Test data:** demo_data/HeLa_digest_SPME_1ng_1.mzML and demo_data/HeLa_digest_SPME_1ng_1.raw. You can also use your own .raw and .mzML files.
@@ -71,7 +68,7 @@ dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sag
 ```
 
 
-### Docker installation
+### Docker Installation
 
 
 This repository provides a self-contained **Docker image** that encapsulates all necessary environments and
