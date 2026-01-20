@@ -22,9 +22,7 @@ pip install -r ./requirements.txt
 
 ## Training and Evaluation Pipeline
 
-### Model Dir
-
-/DDA_BERT/software/resource/model/mp_rank_00_model_states.pt
+Model path: /DDA_BERT/software/resource/model/mp_rank_00_model_states.pt
 
 ### Step 1: Train DDA-BERT
 
