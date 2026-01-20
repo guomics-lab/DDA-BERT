@@ -2,19 +2,17 @@
 
 Multiple installation options are provided to accommodate different usage scenarios.
 
-Users may choose one of the following installation or usage modes:
-
 - [**Portable Executable:**](#portable-executable) A ready-to-run, no-install option recommended for quick evaluation and standard usage.
 - [**Python Package Installation:**](#python-package-installation) This option installs DDA-BERT via pip and enables users to modify the source code as needed, for example, to support rescoring outputs from additional database search engines. In this mode, DDA-BERT can be used directly as a Python package within custom workflows.
 - [**Docker installation**](#docker-installation) Recommended for users who prefer containerized environments or require reproducible deployments.
 
 ### Portable Executable
 
-#### Step1: Download
+#### Step 1: Download
 
 Download the latest DDA-BERT portable executable and accompanying test files from the official release page at [https://guomics.com/software/DDA-BERT](https://guomics.com/software/DDA-BERT/downloads.html).
 
-#### Step2: Run
+#### Step 2: Run
 Unzip the downloaded archive and execute the following command in a terminal:
 ```shell
 cd DDA-BERT; 
