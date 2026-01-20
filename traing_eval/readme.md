@@ -1,4 +1,4 @@
-# DDA-BERT
+# DDA-BERT Training and Evaluation
 
 ## Environment Setup
 
