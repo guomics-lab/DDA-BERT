@@ -4,8 +4,6 @@
 
 DDA-BERT is designed to run on Linux systems and can be deployed using multiple installation options to accommodate different usage scenarios.
 
-### Installation Options
-
 Users may choose one of the following installation or usage modes:
 
 - [**Portable Executable:**](#portable-executable) A ready-to-run, no-install option recommended for quick evaluation and standard usage.
