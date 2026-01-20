@@ -48,5 +48,5 @@ Benchmarking results comparing DDA-BERT with other tools, along with the corresp
 Results are output in CSV format as a comprehensive summary table that is easy to manipulate and interpret, facilitating further biological insights and downstream applications.
 
 # Contact
-For any questions or licensing inquiries, please contact: Dr. Guo E-mail: guotiannan@westlake.edu.cn
+For questions regarding usage or licensing, please contact Dr. Guo via email: guotiannan@westlake.edu.cn
 www.guomics.com
