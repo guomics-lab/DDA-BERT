@@ -59,13 +59,13 @@ uv pip install -e . --refresh
 
 DDA-BERT provides flexible analysis modes, supporting both an "one-stop" workflow and a modular usage pattern, including:
 
-"one-stop" workflow  
+1. "one-stop" workflow  
 A complete one-stop analysis pipeline encompassing database searching, data preprocessing and cleaning, PSM rescoring, FDR control, and protein inference.
 ```shell
 dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
 ```
 
-Modular rescoring and inference workflow  
+2. Modular rescoring and inference workflow  
 Support for rescoring PSMs from existing database search results, followed by FDR control and protein inference, enabling seamless integration with different search engines or established proteomics workflows.
 ```shell
 dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --engines=sage,fp,ap  --output-path=/out/
