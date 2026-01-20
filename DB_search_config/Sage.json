@@ -21,7 +21,7 @@
     "max_variable_mods": 3, 
         "decoy_tag": "rev_",
         "generate_decoys": false,
-        "fasta": "/storage/guotiannanLab/ajun/SFM/DDA-BERT_benchmark/fasta/add_para_diann/human_entrapment_diann_pep.fasta"
+        "fasta": "/storage/fasta/species.fasta"
     },
     "deisotope": true,
     "chimera": false,
@@ -48,6 +48,6 @@
         2
     ],
     "mzml_paths": [
-        "/storage/guotiannanLab/ajun/SFM/DDA-BERT_benchmark/raw_data/Human/HeLa_digest_SPME_0_1ng_1.mzML"
+        "/storage/demo_data/example_data.mzML"
     ]
 }

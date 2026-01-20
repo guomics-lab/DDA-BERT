@@ -7,14 +7,14 @@ calibration:
 experiment:
   database_path: null
   fasta_paths:
-  - /ajun/Benchmark_files/fasta/20231026_hsa_reviewed.fasta
+  - /ajun/Benchmark_files/fasta/species.fasta
   file_paths:
-  #- /zhangyuqi/alphapept/alphapept/guomics100_20240110/Guomics100_topn10_fullprocess_raw1/B20200102_xiaoq_luom_HBA_buildlibrary_HighpH_60min_DDA_IL_3.raw
+  #- 
   fraction:
   - 1
   matching_group:
   - 0
-  #results_path: /zhangyuqi/alphapept/alphapept/guomics100_20240110/Guomics100_topn10_fullprocess_raw1/results.hdf
+  #results_path: 
   sample_group:
   - test
   shortnames:

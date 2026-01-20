@@ -1,5 +1,5 @@
 # Workflow: LFQ_MBR_DDA
-database.db-path=/storage/guotiannanLab/ajun/SFM/fasta/2023-10-26-decoys-contam-Homo_sapiens_reviewed.fasta.fas
+database.db-path=/storage/fasta/species.fasta.fas
 
 
 # Please edit the following path to point to the correct location.
