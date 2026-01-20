@@ -13,7 +13,7 @@ DDA-BERT runs without installation and does not require any additional environme
 Hardware Requirements:  
 •	Operating System: Compatible with Linux-based operating systems.  
 •	Processor: A dual-core processor is recommended; the platform can also run on a single-core processor.  
-•	Memory: At least 40 GB of RAM is recommended. Higher memory configurations are advised for processing large-scale mass spectrometry or FASTA datasets.
+•	Memory: At least 40 GB of RAM is recommended. Higher memory configurations are advised for processing large-scale mass spectrometry or FASTA datasets.  
 •	Graphics Processing Unit (GPU): An NVIDIA GPU that supports bfloat16 (bf16) precision inference is required. CUDA support is necessary, and a minimum of 20GB GPU memory is recommended.
 
 ## Directories Overview
