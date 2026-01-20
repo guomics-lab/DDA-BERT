@@ -8,8 +8,7 @@ DDA-BERT is an end-to-end deep learning tool for rescoring peptide-spectrum matc
 DDA-BERT demonstrates robust and consistent performance across diverse biological systems, including animal, plant, and microbial proteomes. When applied to HLA immunopeptidomics datasets, DDA-BERT continues to show strong and reliable performance. It is applicable to low-input contexts such as trace-level and single-cell proteomics, offering a scalable and reliable solution for improving peptide identification in mass spectrometry-based workflows.
 
 # Installation
-Detailed installation and usage instructions are available in the README under the software directory (https://github.com/zhiyuajun/DDA-BERT/tree/main/software).   
-The portable executable can be downloaded from https://guomics.com/software/DDA-BERT.
+Detailed installation and usage instructions are available in the README under the software directory (https://github.com/zhiyuajun/DDA-BERT/tree/main/software). The portable executable can be downloaded from https://guomics.com/software/DDA-BERT.
 
 Hardware Requirements:  
 •	Operating System: Compatible with Linux-based operating systems.  
