@@ -101,7 +101,7 @@ directory to the container's working directory.
    ```
 3. **Run the Container** (Example using a typical Linux absolute path):
    ```bash
-   docker run --rm -v /home/user/DDA-BERT:/home/test_data guomics2017/dda-bert:v3.0 assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
+   docker run --rm -v /home/user/DDA-BERT:/home/test_data guomics2017/dda-bert:v3.1 assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
    ```
 
 
