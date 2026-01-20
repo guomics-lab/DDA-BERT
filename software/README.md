@@ -14,9 +14,7 @@ Users may choose one of the following installation or usage modes:
 
 #### Step1: Download
 
-Download the latest DDA-BERT portable executable and accompanying test files from the official release page.
-
-You can download the latest release of DDA-BERT [https://guomics.com/software/DDA-BERT](https://guomics.com/software/DDA-BERT/downloads.html).
+Download the latest DDA-BERT portable executable and accompanying test files from the official release page at [https://guomics.com/software/DDA-BERT](https://guomics.com/software/DDA-BERT/downloads.html).
 
 #### Step2: Run
 Unzip the downloaded archive and execute the following command in a terminal:
