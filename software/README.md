@@ -25,9 +25,7 @@ cd DDA-BERT;
 ./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
 ```
 
-### Installation from Source (Editable Mode)
-
-#### Python Package Installation
+### Python Package Installation
 It is strongly recommended to install DDA-BERT in an isolated Conda environment.
 ⏱️ Estimated setup time: **~10–15 minutes**
 
