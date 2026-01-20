@@ -1,9 +1,3 @@
-## Description
-DDA-BERT: a computational platform designed for data-dependent acquisition (DDA) proteomics analysis.
-
-## Software
-The DDA-BERT executable and user manual are available at https://guomics.com/software/DDA-BERT. Run it directly without installation or additional configuration.
-
 # Quick Start Guide
 
 ## Installation
@@ -22,7 +16,7 @@ There are different types of installation or use possible:
 ### Portable Executable
 
 #### Step1: Download the executable and test files
-You can download the latest release of DDA-BERT [here](https://guomics.com/software/DDA-BERT/downloads.html).
+You can download the latest release of DDA-BERT [https://guomics.com/software/DDA-BERT](https://guomics.com/software/DDA-BERT/downloads.html).
 
 #### Step2: Run the Command
 Unzip the installation archive and run the command below in a terminal:
@@ -40,7 +34,7 @@ It is strongly recommended to install DDA-BERT in its own environment.
 3. Install DDA-BERT via pip: pip install dda-bert.
 
 #### Install with Developer from source
-⏱️ Estimated setup time: **~2–5 minutes**
+⏱️ Estimated setup time: **~10–15 minutes**
 
 **Test data:** demo_data/HeLa_digest_SPME_1ng_1.mzML and demo_data/HeLa_digest_SPME_1ng_1.raw. You can also use your own .raw and .mzML files.
 
