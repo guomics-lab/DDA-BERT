@@ -39,7 +39,7 @@ Evaluation typically completes in ~20 minutes, depending on the number of spectr
 
 **For the provided test data, the complete workflow, including database search, PSM rescoring, and protein inference, takes approximately 17.5 minutes on a single NVIDIA A100 (40GB) GPU with 20 CPU cores (AMD EPYC 7742 64-Core Processor).**
 
-Currently, the tool supports input data in .mzML and Bruker .d formats. Sciex .wiff files are not directly supported and must be converted to .mzML prior to analysis. The source code is openly available and modifiable (see the license for details), allowing users to extend the tool to accommodate additional data formats if needed.
+Currently, the tool supports input data in `.mzML` and `Bruker .d` formats. `Sciex .wiff` files are not directly supported and must be converted to .mzML prior to analysis. The source code is openly available and modifiable (see the license for details), allowing users to extend the tool to accommodate additional data formats if needed.
 
 ## Results
 Benchmarking results comparing DDA-BERT with other tools, along with the corresponding FASTA files, trained models, and database search configuration files, are available at:   
