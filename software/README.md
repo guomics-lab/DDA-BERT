@@ -27,9 +27,10 @@ cd DDA-BERT;
 ./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
 ```
 
-### Developer installation
+### Installation from Source (Editable Mode)
 
 #### Python Package Installation
+It is strongly recommended to install DDA-BERT in an isolated Conda environment.
 ⏱️ Estimated setup time: **~10–15 minutes**
 
 **Test data:** demo_data/HeLa_digest_SPME_1ng_1.mzML and demo_data/HeLa_digest_SPME_1ng_1.raw. You can also use your own .raw and .mzML files.
@@ -40,11 +41,11 @@ Download jdk11 from [here](https://guomics-share.oss-cn-shanghai.aliyuncs.com/SO
 unzip and move to project root directory.
 > **⚠️Note**: This project was built using **FragPipe v22**, which includes the following core components: **MSFragger v4.1**, **Philosopher v5.1.1**, **diaTracer v1.1.5**, **IonQuant v1.10.27**. If you're using a different version of FragPipe, make sure to download compatible versions of these tools and properly configure your environment to ensure smooth execution of the analysis pipeline.
 
-You can download FragPipe from [here](https://guomics-share.oss-cn-shanghai.aliyuncs.com/SOFTWARE/DDA-BERT/FragPipe22_0.zip) with the following core components。
+You can download FragPipe from [here](https://guomics-share.oss-cn-shanghai.aliyuncs.com/SOFTWARE/DDA-BERT/FragPipe22_0.zip) with the following core components.
 
 
 #### Prerequisites
-Ensure that Conda or Miniconda is installed. We recommend Miniconda; follow the installation instructions on the official website.
+Clone the DDA-BERT repository and set up an isolated Conda environment:
 
 ```shell
 git clone https://github.com/guomics-lab/DDA-BERT.git
@@ -61,54 +62,38 @@ pip install uv
 uv pip install -e . --refresh
 ```
 
-Linux command-line run
+Running DDA-BERT (Linux Command Line)
+
+PSM Assessment
 ```shell
 dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
-dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --engines=sage,fp,ap  --output-path=/out/
 ```
 
-
+Multi-engine PSM Rescoring
+```shell
+dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --engines=sage,fp,ap  --output-path=/out/
+```
 ### Docker Installation
 
-
-This repository provides a self-contained **Docker image** that encapsulates all necessary environments and
-dependencies for the MassNet-DDA conversion utility. By using this image, users can quickly launch the tool without
-complex setup.
+DDA-BERT is available as a self-contained Docker image that includes all required dependencies and runtime environments. This option enables users to run DDA-BERT without manual environment configuration and is well suited for reproducible and portable deployments.
 
 ### Prerequisites
 
-* **Docker Engine** (for Linux) must be installed and running.
+* **Docker Engine** installed and running on a Linux system
+* Sufficient permissions to pull images from Docker Hub and run containers
 
----
+Ensure that the Docker service is active before proceeding.
 
-The process involves **pulling the image from Docker Hub** and then running a container, mapping your local data
-directory to the container's working directory.
-
-1. **Ensure the Docker service is running.**
-2. **Pull the Docker Image** from the registry in your terminal:
+Step 1: Pull the Docker Image
+Pull the pre-built DDA-BERT image from Docker Hub:
    ```bash
    docker pull guomics2017/dda-bert:v3.1
    ```
-3. **Run the Container** (Example using a typical Linux absolute path):
+Step 2: Run the Container
+
+Below is an example command using a typical Linux absolute path, where a local directory is mounted into the container for data access:
+
    ```bash
    docker run --rm -v /home/user/DDA-BERT:/home/test_data guomics2017/dda-bert:v3.1 assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
    ```
-
-
-## Hardware Requirements:
-•	Operating System: Compatible with Linux-based operating systems.
-
-•	Processor: A dual-core processor is recommended; the platform can also run on a single-core processor.
-
-•	Memory: At least 40 GB of RAM is recommended. Higher memory configurations are advised for processing large-scale mass spectrometry or FASTA datasets.
-
-•	Graphics Processing Unit (GPU): An NVIDIA GPU that supports bfloat16 (bf16) precision inference is required. CUDA support is necessary, and a minimum of 20GB GPU memory is recommended.
-
-## License
-This software is licensed under a custom license that allows academic use but prohibits commercial use. For more details, see the LICENSE file.
-
-## Contact
-For any questions or licensing inquiries, please contact:
-Dr. Guo
-E-mail: guotiannan@westlake.edu.cn
-www.guomics.com
+In this example, the local directory /home/user/DDA-BERT is mounted into the container and used as the working directory for input and output files.
