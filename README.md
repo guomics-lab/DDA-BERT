@@ -42,8 +42,7 @@ Evaluation typically completes in ~20 minutes, depending on the number of spectr
 Currently, the tool supports input data in `.mzML` and `Bruker .d` formats. `Sciex .wiff` files are not directly supported and must be converted to .mzML prior to analysis. The source code is openly available and modifiable (see the license for details), allowing users to extend the tool to accommodate additional data formats if needed.
 
 ## Results
-Benchmarking results comparing DDA-BERT with other tools, along with the corresponding FASTA files, trained models, and database search configuration files, are available at:   
-🔗 https://drive.google.com/drive/folders/1pDxTuFYKoy-uJmq1QS7mWBuz6pkVh3jN
+Benchmarking results comparing DDA-BERT with other tools, along with the corresponding FASTA files, trained models, and database search configuration files, are available at: https://drive.google.com/drive/folders/1pDxTuFYKoy-uJmq1QS7mWBuz6pkVh3jN
 
 Results are output in CSV format as a comprehensive summary table that is easy to manipulate and interpret, facilitating further biological insights and downstream applications.
 
