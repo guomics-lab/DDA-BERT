@@ -16,7 +16,7 @@ Download the latest DDA-BERT portable executable and accompanying test files fro
 Unzip the downloaded archive and execute the following command in a terminal:
 ```shell
 cd DDA-BERT; 
-./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
+./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
 ```
 
 ### Option B. Python Package Installation
@@ -86,6 +86,6 @@ Pull the pre-built DDA-BERT image from Docker Hub:
 Below is an example command using a typical Linux absolute path, where a local directory is mounted into the container for data access:
 
    ```bash
-   docker run --rm -v /home/user/DDA-BERT:/home/test_data guomics2017/dda-bert:v3.1 assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
+   docker run --rm -v /home/user/DDA-BERT:/home/test_data guomics2017/dda-bert:v3.1 assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
    ```
 In this example, the local directory /home/user/DDA-BERT is mounted into the container and used as the working directory for input and output files.
