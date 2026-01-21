@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "dda-bert"
-version = "3.1"
+version = "3.2"
 description = "DDA-BERT: An end-to-end rescoring tool tailored for data-dependent acquisition (DDA) proteomics."
 readme = "README.md"
 requires-python = ">=3.10, <3.13"

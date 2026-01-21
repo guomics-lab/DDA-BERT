@@ -399,21 +399,20 @@ def clean_protein_list(s):
 
 
 def merge(base_file_name, protein_infer_input_csv, sage_path, fp_clean_file, alphepept_pept_dict_path, out_path,
-          open_sage=True, open_fp=True, open_ap=True):
+          open_sage=True, open_fp=True, open_ap=True, is_wiff=False, scan_id_dict=None):
     DDABert_precursor = None
     if open_sage and open_fp and open_ap:
-        DDABert_precursor = merge_all(protein_infer_input_csv, sage_path, fp_clean_file, alphepept_pept_dict_path)
+        DDABert_precursor = merge_all(protein_infer_input_csv, sage_path, fp_clean_file, alphepept_pept_dict_path, is_wiff, scan_id_dict)
     elif open_sage and open_fp:
-        DDABert_precursor = merge_all(protein_infer_input_csv, sage_path, fp_clean_file, None)
+        DDABert_precursor = merge_all(protein_infer_input_csv, sage_path, fp_clean_file, None, is_wiff, scan_id_dict)
     elif open_sage:
-        DDABert_precursor = merge_all(protein_infer_input_csv, sage_path, None, None)
+        DDABert_precursor = merge_all(protein_infer_input_csv, sage_path, None, None, is_wiff, scan_id_dict)
 
     process(base_file_name, DDABert_precursor, out_path)
 
 
-def merge_all(protein_infer_input_csv, sage_path, fp_clean_file, alphepept_pept_dict_path):
+def merge_all(protein_infer_input_csv, sage_path, fp_clean_file, alphepept_pept_dict_path, is_wiff, scan_id_dict):
     inf_input = pd.read_csv(protein_infer_input_csv)
-    alphepept_pept_dict = load(alphepept_pept_dict_path)
 
     inf_input['sequence'] = inf_input['modified_sequence'].astype(str).apply(remove_charge_modi)
     inf_input['decoy'] = np.where(inf_input['label'] == 1, False, True)
@@ -429,7 +428,12 @@ def merge_all(protein_infer_input_csv, sage_path, fp_clean_file, alphepept_pept_
     # from sage
     sage_precursor = pd.read_table(sage_path)
     sage_precursor['sequence'] = sage_precursor['peptide'].astype(str).apply(remove_charge_modi)
-    sage_precursor["scan_number"] = sage_precursor["scannr"].astype(str).apply(lambda x: x.split('scan=')[-1])
+
+    if is_wiff:
+        sage_precursor["scan_number"] = sage_precursor["scannr"].astype(str).apply(lambda x: scan_id_dict[x])
+    else:
+        sage_precursor["scan_number"] = sage_precursor["scannr"].astype(str).apply(lambda x: x.split('scan=')[-1])
+
     sage_precursor['psm_id'] = sage_precursor['scan_number'].astype(str) + '_' + sage_precursor['charge'].astype(
         str) + '_' + sage_precursor['sequence'].astype(str)
     sage_precursor = sage_precursor[['psm_id', 'proteins']].drop_duplicates(subset=['psm_id'])
@@ -453,7 +457,9 @@ def merge_all(protein_infer_input_csv, sage_path, fp_clean_file, alphepept_pept_
             lambda x: x.replace(',', ';')).apply(clean_protein_list)
         dd_list.append(fp_DDABert_precursor)
 
-    if alphepept_pept_dict:
+    if alphepept_pept_dict_path:
+
+        alphepept_pept_dict = load(alphepept_pept_dict_path)
         # 关联ap
         ap_DDABert_precursor['proteins'] = ap_DDABert_precursor['sequence'].apply(
             lambda x: map_alphepept_pept_dict(x, alphepept_pept_dict))

@@ -19,12 +19,14 @@ class AlphapeptProcessHandler(CommonProcessHandler):
 
     def __init__(self, f_info: MzMLFileInfo, fasta_path, ap_config_file, base_output_path, logger,
                  env, input_param,
-                 start_time=0):
+                 start_time=0, open_ap=True):
         CommonProcessHandler.__init__(self, f_info, base_output_path, logger, env, input_param, start_time,
                                       step=constant.ProgressStepEnum.ALPHAPEPT)
         # self.base_alphapept_config_path = base_alphapept_config_path
         self.fasta_path = fasta_path
         self.ap_config_file = ap_config_file
+
+        self.open_ap = open_ap
 
     def deal_process(self):
         pm = ProcessMsg(runtime_data.current_mzml_index, constant.ProgressStepEnum.ALPHAPEPT,
@@ -41,6 +43,10 @@ class AlphapeptProcessHandler(CommonProcessHandler):
 
             if not self.is_raw:
                 self.send_msg(msg='Not raw file, skip alphapept')
+                return
+
+            if not self.open_ap:
+                self.send_msg(msg='Skip alphapept')
                 return
 
             ms_data_path = os.path.join(self.alphapept_result_output_path, f'{self.f_info.base_file_name}.ms_data.hdf')

@@ -19,6 +19,10 @@ DEFAULT_MODEL_FILE = 'resource/model/mp_rank_00_model_states.pt'
 
 DEFAULT_GPU_MAX_RATE = 0.5
 
+
+multiprocessing.freeze_support()
+multiprocessing.set_start_method('spawn', force=True)
+
 app = typer.Typer(
     name="DDA-BERT",
     help="An end-to-end rescoring tool tailored for data-dependent acquisition (DDA) proteomics.",
@@ -236,6 +240,4 @@ def main():
 
 
 if __name__ == "__main__":
-    multiprocessing.freeze_support()
-    multiprocessing.set_start_method('spawn', force=True)
     main()

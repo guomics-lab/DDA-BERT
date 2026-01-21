@@ -171,31 +171,3 @@ class SageProcessHandler(CommonProcessHandler):
         mzml_output_path = os.path.join(self.sage_result_output_path,
                                         self.f_info.base_file_name)
         self.send_msg('Finished run sage, result path is {}'.format(mzml_output_path))
-
-    def run_mzml_raw_spect(self, mzml_path):
-        raw_spect_output_path = os.path.join(self.sage_result_output_path,
-                                             '{}_raw_spec.tsv'.format(self.f_info.base_file_name))
-        if self.env == 'win':
-            cmd = '{} "{}" "{}" '.format(self.mzml_raw_spec_abs_path, mzml_path, raw_spect_output_path)
-            # self.logger.info('Processing run raw_spect, command is {}'.format(cmd))
-            self.send_msg('Processing run raw_spect, command is {}'.format(cmd))
-            p = subprocess.Popen(cmd, stdout=subprocess.PIPE, creationflags=134217728)
-        elif self.env == 'linux':
-            cmd = [self.mzml_raw_spec_abs_path, mzml_path, raw_spect_output_path]
-            # self.logger.info('Processing run raw_spect, command is {}'.format(cmd))
-            self.send_msg('Processing run raw_spect, command is {}'.format(cmd))
-            p = subprocess.Popen(cmd, stdout=subprocess.PIPE)
-
-        stdout = p.stdout
-        while True:
-            output = stdout.readline()
-            if output == b'' or (output == '' and p.poll() is not None):
-                break
-            # self.logger.info(output)
-            if output:
-                info_msg = output.decode('utf-8')
-                info_msg = info_msg.rstrip()
-                if len(info_msg) == 0:
-                    continue
-
-        self.send_msg('Finished Raw spect, result path is {}'.format(raw_spect_output_path))

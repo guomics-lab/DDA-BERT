@@ -14,13 +14,15 @@ class FragpipeProcessHandler(CommonProcessHandler):
 
     def __init__(self, exe_abs_path, f_info: MzMLFileInfo, fasta_path, fp_workflow_file, base_output_path, logger,
                  env, input_param,
-                 start_time=0):
+                 start_time=0, open_fp=True):
         CommonProcessHandler.__init__(self, f_info, base_output_path, logger, env, input_param, start_time,
                                       step=constant.ProgressStepEnum.SAGA)
         self.exe_abs_path = exe_abs_path
         self.fasta_path = fasta_path
         # self.base_work_flow_file_path = get_work_fow_config_path()
         self.fp_workflow_file = fp_workflow_file
+
+        self.open_fp = open_fp
 
     def deal_process(self):
         pm = ProcessMsg(runtime_data.current_mzml_index, constant.ProgressStepEnum.SAGA,
@@ -37,6 +39,10 @@ class FragpipeProcessHandler(CommonProcessHandler):
 
             if not self.is_raw:
                 self.send_msg(msg='Not raw file, skip fragpipe')
+                return
+
+            if not self.open_fp:
+                self.send_msg(msg='Skip fragpipe')
                 return
 
             # build decoy fasta
