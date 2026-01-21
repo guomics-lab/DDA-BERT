@@ -16,7 +16,7 @@ Download the latest DDA-BERT portable executable and accompanying test files fro
 Unzip the downloaded archive and execute the following command in a terminal:
 ```shell
 cd DDA-BERT; 
-./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
+./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
 ```
 
 ### Option B. Python Package Installation
@@ -56,14 +56,35 @@ DDA-BERT provides flexible analysis modes, supporting both an an end-to-end inte
 
 **Option A. "one-stop" workflow**  
 A complete one-stop analysis pipeline encompassing database searching, data preprocessing and cleaning, PSM rescoring, FDR control, and protein inference.
+##### Thermo (.raw) data
 ```shell
-dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
+dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
+```
+
+##### Bruker timsTOF (.d) data
+```shell
+dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/ --engines=sage --mass-format=d
+```
+
+##### Sciex (.wiff) data
+Sciex .wiff files should first be converted to .mzML format. Once converted, run the following command:
+```shell
+dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/ --engines=sage --mass-format=wiff
 ```
 
 **Option B. Modular rescoring and inference workflow**  
 Support for rescoring PSMs from existing database search results, followed by FDR control and protein inference, enabling seamless integration with different search engines or established proteomics workflows.
+##### Thermo (.raw) data
 ```shell
-dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --engines=sage,fp,ap  --output-path=/out/
+dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --output=/out/
+```
+##### Bruker timsTOF (.d) data
+```bash
+dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --output=/out/ --engines=sage --mass-format=d
+```
+##### Sciex (.wiff) data
+```bash
+dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --output=/out/ --engines=sage --mass-format=wiff
 ```
 ### Option C. Docker Installation
 
@@ -86,6 +107,6 @@ Pull the pre-built DDA-BERT image from Docker Hub:
 Below is an example command using a typical Linux absolute path, where a local directory is mounted into the container for data access:
 
    ```bash
-   docker run --rm -v /home/user/DDA-BERT:/home/test_data guomics2017/dda-bert:v3.1 assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
+   docker run --rm -v /home/user/DDA-BERT:/home/test_data guomics2017/dda-bert:v3.1 assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
    ```
 In this example, the local directory /home/user/DDA-BERT is mounted into the container and used as the working directory for input and output files.
