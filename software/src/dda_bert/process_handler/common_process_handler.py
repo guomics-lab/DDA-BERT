@@ -14,7 +14,6 @@ class CommonProcessHandler(object):
         self.base_output_path = base_output_path
         self.f_info = f_info
 
-        # self.is_d = file_utils.is_d(self.f_info.file_path)
         self.is_d = input_param.mass_file_format == 'd'
         self.is_raw = input_param.mass_file_format == 'raw'
 

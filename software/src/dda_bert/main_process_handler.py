@@ -95,7 +95,7 @@ class MainProcessHandler(object):
                                                                  base_output_path,
                                                                  self.current_logger, self.input_param.env,
                                                                  self.input_param,
-                                                                 start_time=start_time)
+                                                                 start_time=start_time, open_ap=self.open_ap)
 
         self.fragpipe_process_handler = FragpipeProcessHandler(fragpipe_exe_path, each_mzml_info,
                                                                self.input_param.fasta_path,
@@ -103,7 +103,7 @@ class MainProcessHandler(object):
                                                                base_output_path,
                                                                self.current_logger, self.input_param.env,
                                                                self.input_param,
-                                                               start_time=start_time)
+                                                               start_time=start_time, open_fp=self.open_fp)
 
         self.get_data_process = GetDataProcessHandler(each_mzml_info, mzml_raw_spec_abs_path, base_output_path,
                                                       self.current_logger,
