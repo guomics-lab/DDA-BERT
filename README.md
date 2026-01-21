@@ -31,8 +31,7 @@ This repository is organized into the following main directories, each serving a
    This directory contains auxiliary scripts for **data processing, result summarization, and visualization**. These utilities support downstream analysis, such as plotting performance metrics and generating figures for method evaluation and result interpretation.
 4. demo_data/
 
-   For demonstration and testing purposes, the `demo_data` directory includes **example datasets** that allow users to quickly validate the software functionality and reproduce the complete analysis workflow without preparing custom input data.  
-   Additional demo datasets in other formats are available for download from Google Drive (🔗 https://drive.google.com/drive/folders/1pDxTuFYKoy-uJmq1QS7mWBuz6pkVh3jN).
+   For demonstration and testing purposes, the `demo_data` directory includes **example datasets** that allow users to quickly validate the software functionality and reproduce the complete analysis workflow without preparing custom input data. Additional demo datasets in other formats are available for download from Google Drive (https://drive.google.com/drive/folders/1pDxTuFYKoy-uJmq1QS7mWBuz6pkVh3jN).
    
 ## Evaluation
 
