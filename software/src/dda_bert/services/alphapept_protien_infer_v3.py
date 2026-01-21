@@ -413,7 +413,6 @@ def merge(base_file_name, protein_infer_input_csv, sage_path, fp_clean_file, alp
 
 def merge_all(protein_infer_input_csv, sage_path, fp_clean_file, alphepept_pept_dict_path):
     inf_input = pd.read_csv(protein_infer_input_csv)
-    alphepept_pept_dict = load(alphepept_pept_dict_path)
 
     inf_input['sequence'] = inf_input['modified_sequence'].astype(str).apply(remove_charge_modi)
     inf_input['decoy'] = np.where(inf_input['label'] == 1, False, True)
@@ -453,7 +452,9 @@ def merge_all(protein_infer_input_csv, sage_path, fp_clean_file, alphepept_pept_
             lambda x: x.replace(',', ';')).apply(clean_protein_list)
         dd_list.append(fp_DDABert_precursor)
 
-    if alphepept_pept_dict:
+    if alphepept_pept_dict_path:
+
+        alphepept_pept_dict = load(alphepept_pept_dict_path)
         # 关联ap
         ap_DDABert_precursor['proteins'] = ap_DDABert_precursor['sequence'].apply(
             lambda x: map_alphepept_pept_dict(x, alphepept_pept_dict))
