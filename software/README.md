@@ -103,8 +103,8 @@ Pull the pre-built DDA-BERT image from Docker Hub:
    docker pull guomics2017/dda-bert:v3.1
    ```
 **Step 2. Run the Container**
-
-Below is an example command using a typical Linux absolute path, where a local directory is mounted into the container for data access:
+Docker-based execution uses the same input parameters and argument conventions as described in the `Running DDA-BERT` section above. The specific arguments depend on the mass spectrometry data type (e.g., Thermo .raw, Bruker .d, or converted Sciex .mzML files).
+The examples below illustrate how to run the container by mounting a local directory for data access, while using the same input parameters as in the native execution mode.
 
    ```bash
    docker run --rm -v /home/user/DDA-BERT:/home/test_data guomics2017/dda-bert:v3.1 assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
