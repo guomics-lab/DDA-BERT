@@ -44,7 +44,7 @@ Currently, the tool supports input data in `.mzML` and `Bruker .d` formats. `Sci
 ## Results
 Benchmarking results comparing DDA-BERT with other tools, along with the corresponding FASTA files, trained models, and database search configuration files, are available at: https://drive.google.com/drive/folders/1pDxTuFYKoy-uJmq1QS7mWBuz6pkVh3jN
 
-Results are output in CSV format as a comprehensive summary table that is easy to manipulate and interpret, facilitating further biological insights and downstream applications.
+Results are stored in CSV format. Detailed descriptions and interpretation of the output files are provided in the user manual at https://guomics.com/software/DDA-BERT/downloads.html.
 
 # Contact
 For questions regarding usage or licensing, please contact Dr. Guo via email: guotiannan@westlake.edu.cn
