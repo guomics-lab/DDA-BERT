@@ -102,7 +102,7 @@ Pull the pre-built DDA-BERT image from Docker Hub:
    ```bash
    docker pull guomics2017/dda-bert:v3.1
    ```
-**Step 2. Run the Container**
+**Step 2. Run the Container**  
 Docker-based execution uses the same input parameters and argument conventions as described in the `Running DDA-BERT` section above. The specific arguments depend on the mass spectrometry data type (e.g., Thermo .raw, Bruker .d, or converted Sciex .mzML files).
 The examples below illustrate how to run the container by mounting a local directory for data access, while using the same input parameters as in the native execution mode.
 
