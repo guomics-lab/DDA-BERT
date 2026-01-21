@@ -51,14 +51,19 @@ class MainProcessHandler(object):
                 self.open_fp = False
                 self.open_ap = False
         else:
-            if input_param.mass_file_format == 'raw':
-                self.open_sage = True
-                self.open_fp = True
-                self.open_ap = True
-            else:
-                self.open_sage = True
-                self.open_fp = False
-                self.open_ap = False
+            # if input_param.mass_file_format == 'raw':
+            #     self.open_sage = True
+            #     self.open_fp = True
+            #     self.open_ap = True
+            # else:
+            #     self.open_sage = True
+            #     self.open_fp = False
+            #     self.open_ap = False
+            run_identify_type_arr = str(input_param.search_engines).split(',')
+            run_identify_type_arr = list(set(run_identify_type_arr))
+            self.open_sage = 'sage' in run_identify_type_arr
+            self.open_fp = 'fp' in run_identify_type_arr
+            self.open_ap = 'ap' in run_identify_type_arr
 
     def _load_alphapept_config(self):
         pass
@@ -69,6 +74,7 @@ class MainProcessHandler(object):
 
         # is_d = file_utils.is_d(each_mzml_info.file_path)
         is_d = self.input_param.mass_file_format == 'd'
+        is_wiff = self.input_param.mass_file_format == 'wiff'
 
         if is_d:
             sage_exe_path = os.path.join(os.getcwd(), 'sage', 'linux_sage')

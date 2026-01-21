@@ -1,6 +1,7 @@
 import json
 import os
 import time
+import pickle
 
 from ..common import constant
 from ..common.runtime_data_info import runtime_data
@@ -57,12 +58,15 @@ class ProteinInferProcessHandler(CommonProcessHandler):
                 print('ProcessMsg:{}'.format(json.dumps(pm.__dict__)))
 
     def deal_one(self, mzml_info):
-
         alphepept_pept_dict_path = None
         if self.open_ap:
             alphepept_pept_dict_path = alphapept_fasta_digest_pep.deal(
                 os.path.join(self.alphapept_result_output_path, f'{self.f_info.base_file_name}_alphapept_config.yaml'),
                 self.logger)
+        scan_id_dict = None
+        if self.is_wiff:
+            with open(os.path.join(self.psm_output_path, 'scan_id_dict.pkl'), mode='rb') as f:
+                scan_id_dict = pickle.load(f)
 
         protein_info_service.merge(mzml_info.base_file_name,
                                    os.path.join(self.pred_result_dir,
@@ -71,4 +75,4 @@ class ProteinInferProcessHandler(CommonProcessHandler):
                                                 f'{self.f_info.base_file_name}.sage.tsv'),
                                    os.path.join(self.fragpipe_fp_first_clean_dir, f'{self.f_info.base_file_name}.csv'),
                                    alphepept_pept_dict_path,
-                                   self.protein_infer_dir, self.open_sage, self.open_fp, self.open_ap)
+                                   self.protein_infer_dir, self.open_sage, self.open_fp, self.open_ap, self.is_wiff, scan_id_dict)

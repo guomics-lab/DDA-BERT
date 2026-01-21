@@ -16,6 +16,7 @@ class CommonProcessHandler(object):
 
         self.is_d = input_param.mass_file_format == 'd'
         self.is_raw = input_param.mass_file_format == 'raw'
+        self.is_wiff = input_param.mass_file_format == 'wiff'
 
         self.step = step
 
