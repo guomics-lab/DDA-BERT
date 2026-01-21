@@ -79,9 +79,13 @@ Support for rescoring PSMs from existing database search results, followed by FD
 dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --output=/out/
 ```
 ##### Bruker timsTOF (.d) data
+```bash
 dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --output=/out/ --engines=sage --mass-format=d
+```
 ##### Sciex (.wiff) data
+```bash
 dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --output=/out/ --engines=sage --mass-format=wiff
+```
 ### Option C. Docker Installation
 
 DDA-BERT is available as a self-contained Docker image that includes all required dependencies and runtime environments. This option enables users to run DDA-BERT without manual environment configuration and is well suited for reproducible and portable deployments.
