@@ -56,15 +56,32 @@ DDA-BERT provides flexible analysis modes, supporting both an an end-to-end inte
 
 **Option A. "one-stop" workflow**  
 A complete one-stop analysis pipeline encompassing database searching, data preprocessing and cleaning, PSM rescoring, FDR control, and protein inference.
+##### Thermo (.raw) data
 ```shell
 dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
 ```
 
+##### Bruker timsTOF (.d) data
+```shell
+dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/ --engines=sage --mass-format=d
+```
+
+##### Sciex (.wiff) data
+Sciex .wiff files should first be converted to .mzML format. Once converted, run the following command:
+```shell
+dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/ --engines=sage --mass-format=wiff
+```
+
 **Option B. Modular rescoring and inference workflow**  
 Support for rescoring PSMs from existing database search results, followed by FDR control and protein inference, enabling seamless integration with different search engines or established proteomics workflows.
+##### Thermo (.raw) data
 ```shell
-dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --engines=sage,fp,ap  --output=/out/
+dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --output=/out/
 ```
+##### Bruker timsTOF (.d) data
+dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --output=/out/ --engines=sage --mass-format=d
+##### Sciex (.wiff) data
+dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --output=/out/ --engines=sage --mass-format=wiff
 ### Option C. Docker Installation
 
 DDA-BERT is available as a self-contained Docker image that includes all required dependencies and runtime environments. This option enables users to run DDA-BERT without manual environment configuration and is well suited for reproducible and portable deployments.
