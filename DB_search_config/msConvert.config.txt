@@ -1,0 +1,4 @@
+mzML = true
+zlib = true
+filter = peakPicking vendor msLevel=1-2
+filter = "titleMaker <RunId>.<ScanNumber>.<ScanNumber>.<ChargeState> File:"<SourcePath>", NativeID:"<Id>"
