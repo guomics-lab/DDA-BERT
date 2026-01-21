@@ -57,13 +57,13 @@ DDA-BERT provides flexible analysis modes, supporting both an an end-to-end inte
 **Option A. "one-stop" workflow**  
 A complete one-stop analysis pipeline encompassing database searching, data preprocessing and cleaning, PSM rescoring, FDR control, and protein inference.
 ```shell
-dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output-path=/out/
+dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
 ```
 
 **Option B. Modular rescoring and inference workflow**  
 Support for rescoring PSMs from existing database search results, followed by FDR control and protein inference, enabling seamless integration with different search engines or established proteomics workflows.
 ```shell
-dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --engines=sage,fp,ap  --output-path=/out/
+dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --engines=sage,fp,ap  --output=/out/
 ```
 ### Option C. Docker Installation
 
