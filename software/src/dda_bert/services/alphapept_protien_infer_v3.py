@@ -460,7 +460,7 @@ def merge_all(protein_infer_input_csv, sage_path, fp_clean_file, alphepept_pept_
     if alphepept_pept_dict_path:
 
         alphepept_pept_dict = load(alphepept_pept_dict_path)
-        # 关联ap
+        #
         ap_DDABert_precursor['proteins'] = ap_DDABert_precursor['sequence'].apply(
             lambda x: map_alphepept_pept_dict(x, alphepept_pept_dict))
         ap_DDABert_precursor['proteins'] = ap_DDABert_precursor['proteins'].astype(str).apply(
