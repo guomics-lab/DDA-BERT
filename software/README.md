@@ -15,7 +15,7 @@ Download the latest DDA-BERT portable executable and accompanying test files fro
 #### Step 2. Run
 Unzip the downloaded archive and execute the following command in a terminal:
 ```shell
-cd DDA-BERT; 
+cd dda-bert; 
 ./dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
 ```
 
@@ -100,7 +100,7 @@ Ensure that the Docker service is active before proceeding.
 **Step 1. Pull the Docker Image**  
 Pull the pre-built DDA-BERT image from Docker Hub:
    ```bash
-   docker pull guomics2017/dda-bert:v3.2
+   docker pull guomics2017/dda-bert:v3.3
    ```
 **Step 2. Run the Container**  
 
@@ -108,6 +108,6 @@ Docker-based execution uses the same input parameters and argument conventions a
 The examples below illustrate how to run the container by mounting a local directory for data access, while using the same input parameters as in the native execution mode.
 
    ```bash
-   docker run --rm -v /home/user/DDA-BERT:/home/test_data guomics2017/dda-bert:v3.2 assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
+   docker run --rm -v /home/user/DDA-BERT:/home/test_data guomics2017/dda-bert:v3.3 assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/
    ```
 In this example, the local directory /home/user/DDA-BERT is mounted into the container and used as the working directory for input and output files.
