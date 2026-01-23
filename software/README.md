@@ -75,7 +75,7 @@ dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --ou
 ```
 
 **Option B. Modular rescoring and inference workflow**  
-Support for rescoring PSMs from existing database search results, followed by FDR control and protein inference, enabling seamless integration with different search engines or established proteomics workflows.  
+Support for rescoring PSMs from existing database search results, followed by FDR control and protein inference. Currently, the rescoring pipeline supports three configurations: Sage + FragPipe + AlphaPept, Sage + FragPipe, and Sage alone.
 
 > **⚠️Note**: Detailed explanations of `--fp-file-dir`, `--sage-file-dir`, and `--ap-file-dir` are provided in the Manual at https://guomics.com/software/DDA-BERT/downloads.html.  
 > **⚠️Note**: If `--ap-file-dir` is enabled, the FASTA path in the `yaml` file must be correctly specified.  
