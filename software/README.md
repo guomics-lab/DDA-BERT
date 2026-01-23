@@ -77,6 +77,8 @@ dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --ou
 **Option B. Modular rescoring and inference workflow**  
 Support for rescoring PSMs from existing database search results, followed by FDR control and protein inference, enabling seamless integration with different search engines or established proteomics workflows.  
 
+> **⚠️Note**: Detailed explanations of `--fp-file-dir`, `--sage-file-dir`, and `--ap-file-dir` are provided in the Manual at https://guomics.com/software/DDA-BERT/downloads.html.  
+
 ##### Thermo (.raw) data
 ```shell
 dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --output=/out/
