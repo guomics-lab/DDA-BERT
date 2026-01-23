@@ -8,7 +8,7 @@ Multiple installation options are provided to accommodate different usage scenar
 
 ### Option A. Portable Executable
 
-> **⚠️Note**: The version of GLIBC must be no lower than 2.38.
+> **⚠️Note**: The portable executable requires GLIBC version 2.38 or later.
 
 #### Step 1. Download
 
@@ -65,7 +65,7 @@ dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --ou
 
 ##### Bruker timsTOF (.d) data
 ```shell
-dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --output=/out/ --engines=sage --mass-format=d
+dda-bert assess --mzml-paths=/data/example.d --fasta=/data/example.fasta --output=/out/ --engines=sage --mass-format=d
 ```
 
 ##### Sciex (.wiff) data
