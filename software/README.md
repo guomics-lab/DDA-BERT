@@ -8,6 +8,8 @@ Multiple installation options are provided to accommodate different usage scenar
 
 ### Option A. Portable Executable
 
+> **⚠️Note**: The version of GLIBC must be no lower than 2.38.
+
 #### Step 1. Download
 
 Download the latest DDA-BERT portable executable and accompanying test files from the official release page at [https://guomics.com/software/DDA-BERT](https://guomics.com/software/DDA-BERT/downloads.html).
