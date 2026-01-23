@@ -75,14 +75,17 @@ dda-bert assess --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --ou
 ```
 
 **Option B. Modular rescoring and inference workflow**  
-Support for rescoring PSMs from existing database search results, followed by FDR control and protein inference, enabling seamless integration with different search engines or established proteomics workflows.
+Support for rescoring PSMs from existing database search results, followed by FDR control and protein inference, enabling seamless integration with different search engines or established proteomics workflows.  
+
+> **⚠️Note**: Note: In the modular rescoring mode, the --mzml-paths argument is used only as a dataset identifier (file name) for result alignment and bookkeeping. It does not require an actual .mzML, .d, or .wiff file, and the specified path does not need to exist on disk.
+
 ##### Thermo (.raw) data
 ```shell
 dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --fp-file-dir=xxx --ap-file-dir=xxx --output=/out/
 ```
 ##### Bruker timsTOF (.d) data
 ```bash
-dda-bert score --mzml-paths=/data/example.mzML --fasta=/data/example.fasta --sage-file-dir=xxx --output=/out/ --engines=sage --mass-format=d
+dda-bert score --mzml-paths=/data/example.d --fasta=/data/example.fasta --sage-file-dir=xxx --output=/out/ --engines=sage --mass-format=d
 ```
 ##### Sciex (.wiff) data
 ```bash
