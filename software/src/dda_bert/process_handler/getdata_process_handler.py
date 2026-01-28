@@ -228,7 +228,9 @@ class GetDataProcessHandler(CommonProcessHandler):
 
         self.logger.info('Finished load mzml data')
         self.send_msg('Finished load mzml data, path is {}'.format(raw_spect_output_path))
-
+        # filter mz_array and intensity_array null
+        spec_df = spec_df[~spec_df['mz_array'].isna()]
+        spec_df = spec_df[~spec_df['intensity_array'].isna()]
         spec_df['mz_array'] = spec_df['mz_array'].apply(lambda x: [float(dd) for dd in x.split(',')])
         spec_df['intensity_array'] = spec_df['intensity_array'].apply(lambda x: [float(dd) for dd in x.split(',')])
 
